@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //frontend
-Route::get('/Home', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
 
 
 
