@@ -13,4 +13,12 @@ class HomeController extends Controller
     public function detail(){
         return view('user.detail_product');
     }
+
+    public function login(){
+        return view('login');
+    }
+
+    public function register(){
+        return view('register');
+    }
 }
