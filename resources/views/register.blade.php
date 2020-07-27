@@ -16,7 +16,6 @@
                     <p class="code">Phone Number</p>
                 </div>
                 <button class="grey">Submit</button>
-                <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
                 <div class="clear"></div>
             </form>
         </div>
