@@ -12,12 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//frontend
+
+Route::get('/', 'HomeController@index');
+Route::get('/detail', 'HomeController@detail');
+=======
 Route::get('/home', 'HomeController@index');
 
 
 
-
 //backend
-Route::get('/admin ', 'AdminController@index');
-Route::get('/dashboard ', 'AdminController@show_dashboard');
+Route::prefix('admin')->group(function () {
+    Route::get('/', 'AdminController@index');
+    Route::get('/dashboard ', 'AdminController@show_dashboard');
+});
