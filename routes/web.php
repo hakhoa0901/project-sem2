@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //frontend
-Route::get('/Home', 'HomeController@index');
-
+Route::get('/', 'HomeController@index');
+Route::get('/detail', 'HomeController@detail');
 
 
 
 //backend
-Route::get('/admin ', 'AdminController@index');
-Route::get('/dashboard ', 'AdminController@show_dashboard');
+Route::prefix('admin')->group(function () {
+    Route::get('/', 'AdminController@index');
+    Route::get('/dashboard ', 'AdminController@show_dashboard');
+});
