@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 
-class CategoryConntroller extends Controller
+class CategoryController extends Controller
 {
-    private $view_prefix = 'categories';
+    private $view_prefix = 'admin/categories';
 
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class CategoryConntroller extends Controller
      * @param $request
      * @return \Illuminate\Http\Response
      */
-    public function index($request)
+    public function index(Request $request)
     {
         $list = Category::all();
         $list = Category::where('name', 'like', '%' .$request->get('keyword'). '%')->paginate(2);
