@@ -9,15 +9,15 @@ use Illuminate\Support\Facades\Response;
 
 class ProductController extends Controller
 {
-    private $view_prefix = 'product';
+    private $view_prefix = 'admin/products';
 
-    public function getList()
+    public function index(Request $request)
     {
         $listProduct = Product::all();
         return view($this->view_prefix .'/list')->with('listProduct', $listProduct);
     }
 
-    public function getDetail($id)
+    public function show($id)
     {
         $product = Product::find($id);
         return view($this->view_prefix .'/detail')->with('product', $product);

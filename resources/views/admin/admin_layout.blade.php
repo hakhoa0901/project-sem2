@@ -41,23 +41,75 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <!--logo end-->
 
-        <div class="top-nav clearfix">
-            <!--search & user info start-->
-            <ul class="nav pull-right top-menu">
-                <li>
-                    <input type="text" class="form-control search" placeholder=" Search">
-                </li>
-                <!-- user login dropdown start-->
+        <div class="nav notify-row" id="top_menu">
+            <!--  notification start -->
+            <ul class="nav top-menu">
+                <!-- settings start -->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="" src="{{asset('assets/images/2.png')}}">
-                        <span class="username">Admin</span>
-                        <b class="caret"></b>
+                        <i class="fa fa-tasks"></i>
+                        <span class="badge bg-success">8</span>
                     </a>
-                    <ul class="dropdown-menu extended logout">
-                        <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                        <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                    <ul class="dropdown-menu extended tasks-bar">
+                        <li>
+                            <p class="">You have 8 pending tasks</p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="task-info clearfix">
+                                    <div class="desc pull-left">
+                                        <h5>Target Sell</h5>
+                                        <p>25% , Deadline  12 June’13</p>
+                                    </div>
+                                    <span class="notification-pie-chart pull-right" data-percent="45">
+                            <span class="percent"></span>
+                            </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="task-info clearfix">
+                                    <div class="desc pull-left">
+                                        <h5>Product Delivery</h5>
+                                        <p>45% , Deadline  12 June’13</p>
+                                    </div>
+                                    <span class="notification-pie-chart pull-right" data-percent="78">
+                            <span class="percent"></span>
+                            </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="task-info clearfix">
+                                    <div class="desc pull-left">
+                                        <h5>Payment collection</h5>
+                                        <p>87% , Deadline  12 June’13</p>
+                                    </div>
+                                    <span class="notification-pie-chart pull-right" data-percent="60">
+                            <span class="percent"></span>
+                            </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="task-info clearfix">
+                                    <div class="desc pull-left">
+                                        <h5>Target Sell</h5>
+                                        <p>33% , Deadline  12 June’13</p>
+                                    </div>
+                                    <span class="notification-pie-chart pull-right" data-percent="90">
+                            <span class="percent"></span>
+                            </span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="external">
+                            <a href="#">See All Tasks</a>
+                        </li>
                     </ul>
                 </li>
                 <!-- user login dropdown end -->
@@ -74,9 +126,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="leftside-navigation">
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                        <a class="active" href="{{URL::to('/dashboard')}}">
+                        <a class="active" href="{{URL::to('/category')}}">
                             <i class="fa fa-dashboard"></i>
-                            <span>Dashboard</span>
+                            <span></span>
                         </a>
                     </li>
 
@@ -100,7 +152,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            @yield('admin_content')
+            @yield('content')
         </section>
         <!-- footer -->
         <div class="footer">
@@ -207,6 +259,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
 </script>
 <!-- //calendar -->
+<script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.js')}}"></script>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
 </body>
 </html>
 
