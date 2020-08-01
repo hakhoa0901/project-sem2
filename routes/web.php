@@ -13,17 +13,25 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@home');
 Route::get('/detail', 'HomeController@detail');
-Route::get('/home', 'HomeController@index');
-Route::get('/login', 'HomeController@login');
-Route::get('/register', 'HomeController@register');
 
-
-
-//backend
-Route::prefix('admin')->group(function () {
-    Route::get('/', 'AdminController@index');
-    Route::get('/dashboard ', 'AdminController@show_dashboard');
+Route::prefix('/admin')->group(function () {
+    Route::resource('/categories', 'CategoryController');
+    Route::resource('/products', 'ProductController');
+    Route::resource('/users', 'AccountController');
+    Route::resource('/orders', 'OrderController');
 });
+
+//Route::middleware(['middleware.checkAcc'])->group(function () {
+//
+//});
+
+Route::get('/login', 'AccountController@login');
+Route::post('/login', 'AccountController@processLogin');
+
+Route::get('/register', 'AccountController@register');
+Route::post('/register', 'AccountController@userProcessRegister');
+
+
+

@@ -4,8 +4,8 @@
         <div class="cssmenu">
             <ul>
 
-                <li><a href="login.html">Log In</a></li> |
-                <li><a href="register.html">Sign Up</a></li>
+                <li><a href="/login">Log In</a></li> |
+                <li><a href="/register">Sign Up</a></li>
             </ul>
         </div>
         <div class="clear"></div>

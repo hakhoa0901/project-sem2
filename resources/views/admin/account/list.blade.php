@@ -4,16 +4,16 @@
     <div class="row">
         <div class="col">
             <h4 class="mb-3">
-                <i class="fas fa-stream"></i> List Order
+                <i class="fas fa-stream"></i> List Account
             </h4>
 {{--            <a href="/categories"><i class=""></i>&nbsp;&nbsp;Add category</a>--}}
         </div>
     </div>
-    <div class="row mb-2 mt-2">
-        <div class="col-4">
-        </div>
-        <div class="col-4">
-{{--            <form action="/adm" method="get">--}}
+{{--    <div class="row mb-2 mt-2">--}}
+{{--        <div class="col-4">--}}
+{{--        </div>--}}
+{{--        <div class="col-4">--}}
+{{--            <form action="/admin/users" method="get">--}}
 {{--                <div class="form-group float-left mr-2">--}}
 {{--                    <select name="categoryId" class="form-control">--}}
 {{--                        <option value="1">Category 01</option>--}}
@@ -42,8 +42,12 @@
                     </th>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">UserName</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">TYpe</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -54,8 +58,14 @@
                         </th>
                         <th scope="row">{{$obj->id}}</th>
                         <td>{{$obj->name}}</td>
-                        <td><a href="/categories/{{$obj->id}}">Detail</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                            <a href="/categories/{{$obj->id}}/edit">Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <td>{{$obj->userName}}</td>
+                        <td>{{$obj->address}}</td>
+                        <td>{{$obj->email}}</td>
+                        <td>{{$obj->phone}}</td>
+                        <td>{{$obj->status}}</td>
+                        <td>{{$obj->type}}</td>
+                        <td><a href="/admin/users/{{$obj->id}}">Detail</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                            <a href="/admin/users/{{$obj->id}}/edit">Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                             {{--            <a onclick="return confirm('Are you sure?')" href="/categories/{{$obj->id}}">Delete</a>--}}
                             {{--            <form action="/categories/{{$obj->id}}" method="POST">--}}
                             {{--                @method('DELETE')--}}

@@ -20,6 +20,10 @@
     <script src="{{asset('user/js/fwslider.js')}}"></script>
     <!--end slider -->
     <script src="{{asset('user/js/jquery.easydropdown.js')}}"></script>
+    <meta name="csrf-token" content="{{csrf_token()}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 </head>
 <body>
