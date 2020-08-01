@@ -22,7 +22,7 @@ class CreateAccountsTable extends Migration
             $table->string('address');
             $table->string('email');
             $table->integer('phone');
-            $table->integer('status');
+            $table->enum('status',array('active','inactive'));
             $table->enum('type',array('customer','admin'));
             $table->timestamps();
         });

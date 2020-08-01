@@ -4,16 +4,16 @@
     <div class="row">
         <div class="col">
             <h4 class="mb-3">
-                <i class="fas fa-stream"></i> List Order
+                <i class="fas fa-stream"></i> List order
             </h4>
-{{--            <a href="/categories"><i class=""></i>&nbsp;&nbsp;Add category</a>--}}
+{{--            <a href="/"><i class=""></i>&nbsp;&nbsp;Add category</a>--}}
         </div>
     </div>
-    <div class="row mb-2 mt-2">
-        <div class="col-4">
-        </div>
-        <div class="col-4">
-{{--            <form action="/adm" method="get">--}}
+{{--    <div class="row mb-2 mt-2">--}}
+{{--        <div class="col-4">--}}
+{{--        </div>--}}
+{{--        <div class="col-4">--}}
+{{--            <form action="/categories" method="get">--}}
 {{--                <div class="form-group float-left mr-2">--}}
 {{--                    <select name="categoryId" class="form-control">--}}
 {{--                        <option value="1">Category 01</option>--}}
@@ -41,9 +41,12 @@
                         <input type="checkbox" id="check-all">
                     </th>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Created_by</th>
+                    <th scope="col">TotalPrice</th>
+                    <th scope="col">ShipName</th>
+                    <th scope="col">ShipAddress</th>
+                    <th scope="col">ShipPhone</th>
+                    <th scope="col">Payment-type</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,9 +56,17 @@
                             <input type="checkbox" class="check-item" value="">
                         </th>
                         <th scope="row">{{$obj->id}}</th>
-                        <td>{{$obj->name}}</td>
-                        <td><a href="/categories/{{$obj->id}}">Detail</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                            <a href="/categories/{{$obj->id}}/edit">Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <td>{{$obj->creadted_by}}</td>
+                        <td>{{$obj->totalPrice}}</td>
+                        <td>{{$obj->shipName}}</td>
+                        <td>{{$obj->shipAddress}}</td>
+                        <td>{{$obj->shipPhone}}</td>
+                        <td>{{$obj->payment_type}}</td>
+                        <td>{{$obj->status}}</td>
+                        <td>{{$obj->created_at}}</td>
+                        <td>{{$obj->updated_at}}</td>
+                        <td><a href="/admin/order/{{$obj->id}}">Detail</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                            <a href="/admin/order/{{$obj->id}}/edit">Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                             {{--            <a onclick="return confirm('Are you sure?')" href="/categories/{{$obj->id}}">Delete</a>--}}
                             {{--            <form action="/categories/{{$obj->id}}" method="POST">--}}
                             {{--                @method('DELETE')--}}
@@ -84,7 +95,7 @@
 {{--            <button type="button" class="btn btn-outline-primary mb-2" id="btn-apply-all">Apply to all</button>--}}
 {{--        </div>--}}
 
-{{--    </div>--}}
+    </div>
     <div class="row">
         <div class="col-8"></div>
         <div class="col-4">

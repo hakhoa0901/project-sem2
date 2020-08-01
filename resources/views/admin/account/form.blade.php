@@ -8,7 +8,7 @@
                     <i class="fas fa-stream"></i> Form category
                     <small class="text-muted">Enter information</small>
                 </h4>
-                <a href="/admin/users"><i class=""></i>&nbsp;&nbsp;List category</a>
+{{--                <a href="/categories"><i class=""></i>&nbsp;&nbsp;List category</a>--}}
             </div>
         </div>
         <div class="row">
