@@ -18,7 +18,7 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         $list = Category::all();
-        $list = Category::where('name', 'like', '%' .$request->get('keyword'). '%')->paginate(2);
+        $list = Category::where('name', 'like', '%' .$request->get('keyword'). '%')->orderBy('created_at', 'DESC')->paginate(5);
         return view($this->view_prefix . '/list')->with('list', $list);
     }
 
