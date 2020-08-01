@@ -31,5 +31,11 @@ Route::get('/women', 'HomeController@women');
 //backend
 Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index');
-    Route::get('/dashboard ', 'AdminController@show_dashboard');
+    Route::get('/product_list', 'AdminController@product_list');
+    Route::get('/product_create', 'AdminController@product_create');
+    Route::get('/category_list', 'AdminController@category_list');
+    Route::get('/category_create', 'AdminController@category_create');
+    Route::get('/user_list', 'AdminController@user_list');
+    Route::get('/user_create', 'AdminController@user_create');
+    Route::get('/cart_list', 'AdminController@cart_list');
 });

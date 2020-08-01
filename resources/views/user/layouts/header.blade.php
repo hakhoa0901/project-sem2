@@ -4,8 +4,8 @@
         <div class="cssmenu">
             <ul>
 
-                <li><a href="login.html">Log In</a></li> |
-                <li><a href="register.html">Sign Up</a></li>
+                <li><a href="/login">Log In</a></li> |
+                <li><a href="/register">Sign Up</a></li>
             </ul>
         </div>
         <div class="clear"></div>
@@ -19,7 +19,7 @@
             </div>
             <div class="menu">
                 <ul class="megamenu skyblue">
-                    <li class="active grid"><a href="index.html">Home</a></li>
+                    <li class="active grid"><a href="/">Home</a></li>
                     <li><a class="color4" href="#">women</a>
                         <div class="megapanel">
                             <div class="row">
@@ -27,7 +27,7 @@
                                     <div class="h_nav">
                                         <h4>Contact Lenses</h4>
                                         <ul>
-                                            <li><a href="womens.html">Daily-wear soft lenses</a></li>
+                                            <li><a href="/women">Daily-wear soft lenses</a></li>
                                             <li><a href="womens.html">Extended-wear</a></li>
                                             <li><a href="womens.html">Lorem ipsum </a></li>
                                             <li><a href="womens.html">Planned replacement</a></li>
