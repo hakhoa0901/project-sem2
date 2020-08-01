@@ -12,133 +12,145 @@ class ProductsSeeder extends Seeder
      */
     public function run()
     {
-        //
-      DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         DB::table('products')->truncate();
-      DB::table('products')->insert([  [
-                'id'=> 1,
-                'name'=> 'Kính mắt lục giác',
-                'price'=> '890.000 VNĐ',
-                'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/j75005-blk_295x.jpg?v=1590115183',
-                'description'=>'Kính mắt nam',
-
+        DB::table('products')->insert([[
+                'id' => '1',
+                'name'=>"DOLCE & GABBANA GOLD COLLECTION DG2133K-02/39",
+                'price'=>16650000,
+                'description'=>'Giới tính: Nam
+                                    Chất liệu mắt: Plastic
+                                    Chất liệu gọng: Metal
+                                    Màu mắt: Vàng / Mirror
+                                    Màu Gọng: Vàng
+                                    Lọc UV400: Có',
+                'colour'=>'red',
+                'frameShape'=>'Pilot',
+                'frameSize'=>'small',
+                'frameType'=>'full rim',
+                'images'=>'https://eyewearstore.vn/uploads/plugin/products/1022/dolce-amp-gabbana-dg2133k-02-39-dg2133k-02-39-1-0.jpg',
+                'status'=>'active',
+                'creadted_by'=>1,
+                'category_id'=>1,
+                'brand_id'=>1
             ],
-              [
-                  'id'=> 2,
-                  'name'=> 'EF58750-C07',
-                  'price'=> '500.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/EF58750-C07_800x.JPG?v=1544556974',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 3,
-                  'name'=> 'Kính râm nam kinh loại mắt vuông',
-                  'price'=> '890.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/J45043-blk_295x.jpg?v=1590119560',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 4,
-                  'name'=> 'Kính phi công nam tròng xanh',
-                  'price'=> '890.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/J75007-GDBR_800x.jpg?v=1588564940',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 5,
-                  'name'=> 'EF58773-C05',
-                  'price'=> '560.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/EF58773-C05_800x.JPG?v=1544557289',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 6,
-                  'name'=> 'J75006-GUN',
-                  'price'=> '590.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/J75006-GUN_800x.jpg?v=1565024665',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 7,
-                  'name'=> 'J75006-SIL',
-                  'price'=> '590.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/J75006-SIL_295x.jpg?v=1518418395',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 8,
-                  'name'=> 'Kính mắt lục giác',
-                  'price'=> '890.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/j75005-blk_295x.jpg?v=1590115183',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 9,
-                  'name'=> 'Kính mắt lục giác',
-                  'price'=> '890.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/j75005-blk_295x.jpg?v=1590115183',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 10,
-                  'name'=> 'Kính mắt lục giác',
-                  'price'=> '890.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/j75005-blk_295x.jpg?v=1590115183',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 11,
-                  'name'=> 'Kính mắt lục giác',
-                  'price'=> '890.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/j75005-blk_295x.jpg?v=1590115183',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 12,
-                  'name'=> 'Kính mắt lục giác',
-                  'price'=> '890.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/j75005-blk_295x.jpg?v=1590115183',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 13,
-                  'name'=> 'Kính mắt lục giác',
-                  'price'=> '890.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/j75005-blk_295x.jpg?v=1590115183',
-                  'description'=>'Kính mắt nam',
-
-              ],
-              [
-                  'id'=> 14,
-                  'name'=> 'Kính mắt lục giác',
-                  'price'=> '890.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/j75005-blk_295x.jpg?v=1590115183',
-                  'description'=>'Kính mắt nam',
-
-              ], [
-                  'id'=> 15,
-                  'name'=> 'Kính mắt lục giác',
-                  'price'=> '890.000 VNĐ',
-                  'images'=> 'https://cdn.shopify.com/s/files/1/2726/7182/products/j75005-blk_295x.jpg?v=1590115183',
-                  'description'=>'Kính mắt nam',
-
-              ]
-
-
-               ]
-
+                [
+                    'id' => '2',
+                    'name'=>"DOLCE & GABBANA GOLD COLLECTION DG2133K-488/58",
+                    'price'=>16650000,
+                    'description'=>'Giới tính: Nam
+                                    Chất liệu mắt: Plastic
+                                    Chất liệu gọng: Metal
+                                    Màu mắt: Vàng / Mirror
+                                    Màu Gọng: Vàng
+                                    Lọc UV400: Có',
+                    'colour'=>'yellow',
+                    'frameShape'=>'Pilot',
+                    'frameSize'=>'small',
+                    'frameType'=>'full rim',
+                    'images'=>'https://eyewearstore.vn/uploads/plugin/products/1023/dolce-amp-gabbana-gold-collection-dg2133k-488-58-dg2133k-488-58-1.jpg',
+                    'status'=>'active',
+                    'creadted_by'=>1,
+                    'category_id'=>1,
+                    'brand_id'=>1
+                ],[
+                    'id' => '3',
+                    'name'=>"DOLCE & GABBANA DG2133-04/73",
+                    'price'=>16650000,
+                    'description'=>'Giới tính: Nam
+                                    Chất liệu mắt: Plastic
+                                    Chất liệu gọng: Metal
+                                    Màu mắt: Vàng / Mirror
+                                    Màu Gọng: Vàng
+                                    Lọc UV400: Có',
+                    'colour'=>'yellow',
+                    'frameShape'=>'round',
+                    'frameSize'=>'large',
+                    'frameType'=>'half rim',
+                    'images'=>'https://eyewearstore.vn/uploads/plugin/products/3823/dolce-amp-gabbana-dg2133-04-73-dg2133-0473.jpg',
+                    'status'=>'active',
+                    'creadted_by'=>1,
+                    'category_id'=>1,
+                    'brand_id'=>1
+                ],[
+                    'id' => '4',
+                    'name'=>"DOLCE & GABBANA DG2144-02/F9",
+                    'price'=>6480000,
+                    'description'=>'Giới tính: Nam
+                                    Chất liệu mắt: Plastic
+                                    Chất liệu gọng: Metal
+                                    Màu mắt: Vàng / Mirror
+                                    Màu Gọng: Vàng
+                                    Lọc UV400: Có',
+                    'colour'=>'orange',
+                    'frameShape'=>'square',
+                    'frameSize'=>'medium',
+                    'frameType'=>'full rim',
+                    'images'=>'https://eyewearstore.vn/uploads/plugin/products/1030/dolce-amp-gabbana-dg2144-02-f9-dg2144-02-f9-1.jpg',
+                    'status'=>'active',
+                    'creadted_by'=>1,
+                    'category_id'=>1,
+                    'brand_id'=>1
+                ],[
+                    'id' => '5',
+                    'name'=>"DOLCE & GABBANA DG2144-12968G",
+                    'price'=>680000,
+                    'description'=>'Giới tính: Nam
+                                    Chất liệu mắt: Plastic
+                                    Chất liệu gọng: Metal
+                                    Màu mắt: Vàng / Mirror
+                                    Màu Gọng: Vàng
+                                    Lọc UV400: Có',
+                    'colour'=>'violet',
+                    'frameShape'=>'rectangle',
+                    'frameSize'=>'large',
+                    'frameType'=>'rim less',
+                    'images'=>'https://eyewearstore.vn/uploads/plugin/products/1032/dolce-amp-gabbana-dg2144-12968g-dg2144-12968g-0.jpg',
+                    'status'=>'active',
+                    'creadted_by'=>1,
+                    'category_id'=>1,
+                    'brand_id'=>1
+                ],[
+                    'id' => '6',
+                    'name'=>"DOLCE & GABBANA DG2144-13076G",
+                    'price'=>480000,
+                    'description'=>'Giới tính: Nam
+                                    Chất liệu mắt: Plastic
+                                    Chất liệu gọng: Metal
+                                    Màu mắt: Vàng / Mirror
+                                    Màu Gọng: Vàng
+                                    Lọc UV400: Có',
+                    'colour'=>'blue',
+                    'frameShape'=>'round',
+                    'frameSize'=>'medium',
+                    'frameType'=>'rim less',
+                    'images'=>'https://eyewearstore.vn/uploads/plugin/products/2161/dolce-amp-gabbana-dg2144-13076g-dg2144-13076g-0.jpg',
+                    'status'=>'active',
+                    'creadted_by'=>1,
+                    'category_id'=>1,
+                    'brand_id'=>1
+                ],[
+                    'id' => '7',
+                    'name'=>"DOLCE & GABBANA DG2144-02/N0",
+                    'price'=>6480000,
+                    'description'=>'Giới tính: Nam
+                                    Chất liệu mắt: Plastic
+                                    Chất liệu gọng: Metal
+                                    Màu mắt: Vàng / Mirror
+                                    Màu Gọng: Vàng
+                                    Lọc UV400: Có',
+                    'colour'=>'yellow',
+                    'frameShape'=>'rectangle',
+                    'frameSize'=>'large',
+                    'frameType'=>'half rim',
+                    'images'=>'https://eyewearstore.vn/uploads/plugin/products/2557/dolce-amp-gabbana-dg2144-02-n0-dg2144-02n0-0.jpg',
+                    'status'=>'active',
+                    'creadted_by'=>1,
+                    'category_id'=>1,
+                    'brand_id'=>1
+                ]
+            ]
         );
-        \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
