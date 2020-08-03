@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Category form</h1>
-    <form action="/categories/{{$obj->id}}" method="post">
+    <form action="/admin/categories/{{$obj->id}}" method="post">
         @method('PUT')
         @csrf
         <div>

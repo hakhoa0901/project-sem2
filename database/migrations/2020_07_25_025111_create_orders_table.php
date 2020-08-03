@@ -19,8 +19,8 @@ class CreateOrdersTable extends Migration
             $table->string('shipName');
             $table->string('shipAddress');
             $table->string('shipPhone');
-            $table->enum('payment_type',array('ví điện tử','tiền mặt'));
-            $table->enum('status',array('active','inactive'));
+            $table->string('payment_type');
+            $table->string('status');
             $table->timestamps();
         });
     }

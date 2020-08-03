@@ -3,29 +3,89 @@
 @section('content')
     <h1>List Product</h1>
     <ul>
-        @foreach($listProduct as $product)
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/admin/products" method="get" id="product_form">
+                            @csrf
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group mb-4">
+                                            <label for="exampleFormControlSelect1">Select category</label>
+                                            <select name="category_id" class="form-control" id="categorySelect">
+                                                <option value="0">All</option>
+                                                @foreach($categories as $cate)
+                                                    <option value="{{$cate->id}}" {{$cate->id == $category_id ? 'selected':''}}>{{$cate->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect1">Search by keyword</label>
+                                            <input value="{{$keyword}}" type="text" name="keyword" class="form-control" placeholder="Search by keyword">
+                                            <input type="submit" style="visibility: hidden;" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect1">Search by time</label>
+                                            <input type="text" name="dates" class="form-control">
+                                            <input type="hidden" name="start">
+                                            <input type="hidden" name="end">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">
+                            <input type="checkbox" id="check-all">
+                        </th>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">created_by</th>
+                        <th scope="col">Images</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+        @foreach($list as $product)
             <tr>
                 <th scope="row">
                     <input type="checkbox" class="check-item" value="">
                 </th>
-                <th scope="row">{{$product->id}}</th>
-                <td><img class="img-thumbnail" src="{{$product->photo}}" width="150px" alt=""></td>
+                <th class="border-top-0 px-2 py-4">{{$product->id}}</th>
                 <td>{{$product->name}}</td>
-                <td>{!! $product->description !!}</td>
-                <td><a href="/categories/{{$product->id}}">Detail</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="/categories/{{$product->id}}/edit">Edit</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                    {{--            <a onclick="return confirm('Are you sure?')" href="/categories/{{$obj->id}}">Delete</a>--}}
-                    {{--            <form action="/categories/{{$obj->id}}" method="POST">--}}
-                    {{--                @method('DELETE')--}}
-                    {{--                @csrf--}}
-                    {{--                --}}{{-- Thẻ button default submit form, ko muốn submit thì thêm type=button--}}
-                    {{--                --}}{{--                <button>Delete User</button>--}}
-                    {{--                --}}{{--                <input type="submit" value="Delete">--}}
-                    {{--                <a href="#" onclick="confirm('Are you sure?')?parentNode.submit():''">Delete</a>--}}
-                    {{--            </form>--}}
-                    <a href="#" class="btn-delete" id="delete-{{$product->id}}">Delete with JS</a></td>
+                <td>{{$product->price}}</td>
+                <td>{{$product->description}}</td>
+                <td>{{$product->created_by}}</td>
+               </td> <td><img class="img-thumbnail" src="{{$product->photo}}" width="150px" alt=""></td>
+                <td>{{ $product->status}}</td>
+                <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
+                    <a class="text-primary mr-1" href="/admin/products/{{$product->id}}">Detail</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="text-orange mr-1" href="/admin/products/{{$product->id}}/edit">Edit</a>&nbsp;&nbsp&nbsp;&nbsp;
+                    <a href="#"  class="text-danger mr-1" id="delete-{{$product->id}}">Delete</a></td>
             </tr>
         @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </ul>
 @endsection
 @section('script')

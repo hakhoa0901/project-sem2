@@ -8,12 +8,11 @@
                     <i class="fas fa-stream"></i> Form category
                     <small class="text-muted">Enter information</small>
                 </h4>
-                <a href="/admin/users"><i class=""></i>&nbsp;&nbsp;List category</a>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <form action="/admin/users" method="post">
+                <form action="/admin/categories" method="post">
                     @csrf
                     <div class="form-row">
                         <div class="form-group">

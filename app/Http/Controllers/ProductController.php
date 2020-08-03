@@ -13,8 +13,31 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
-        $listProduct = Product::all();
-        return view($this->view_prefix .'/list')->with('listProduct', $listProduct);
+        // tạo biến data là một mảng chứa dữ liệu trả về.
+        $data = array();
+        $data['category_id'] = 0;
+        $data['keyword'] = '';
+        $categories = Category::all();
+        $product_list = Product::query();
+        if ($request->has('category_id') && $request->get('category_id') != 0) {
+            $data['category_id'] = $request->get('category_id');
+            $product_list = $product_list->where('category_id', '=', $request->get('category_id'));
+        }
+        if ($request->has('keyword') && strlen($request->get('keyword')) > 0) {
+            $data['keyword'] = $request->get('keyword');
+            $product_list = $product_list->where('name', 'like', '%' . $request->get('keyword') . '%');
+        }
+        if ($request->has('start') && strlen($request->get('start')) > 0 && $request->has('end') && strlen($request->get('end')) > 0) {
+            $data['start'] = $request->get('start');
+            $data['end'] = $request->get('end');
+            $from = date($request->get('start') . ' 00:00:00');
+            $to = date($request->get('end') . ' 23:59:00');
+            $product_list = $product_list->whereBetween('created_at', [$from, $to]);
+        }
+        $data['list'] = $product_list->get();
+        $data['categories'] = $categories;
+        return view('admin.products.list')
+            ->with($data);
     }
 
     public function show($id)
@@ -31,6 +54,16 @@ class ProductController extends Controller
     public function create()
     {
         $listCategory = Category::all();
+        $colours= [
+           ''=>trans('select'),
+            'red'=>'red',
+            'green'=>'green',
+            'blue'=>'blue',
+            'yellow'=>'yellow',
+            'violet'=>'violet',
+            'orange'=>'orange',
+            'gray'=>'gray'
+    ];
         return view($this->view_prefix .'/form')->with('listCategory', $listCategory);
     }
 
@@ -46,7 +79,10 @@ class ProductController extends Controller
         $product->categoryId = $request->get('categoryId');
         $product->name = $request->get('name');
         $product->price = $request->get('price');
-        $product->thumbnail = $request->get('thumbnail');
+        $thumbnails = $request->get('thumbnails');
+        foreach ($thumbnails as $thumbnail) {
+            $product->thumbnail .= $thumbnail . ',';
+        }
         $product->save();
         return redirect($this->view_prefix .'/list');
     }
@@ -81,7 +117,11 @@ class ProductController extends Controller
         }
         $product->name = $request->get('name');
         $product->price = $request->get('price');
-        $product->thumbnail = $request->get('thumbnail');
+        $thumbnails = $request->get('thumbnail');
+        $product->thumbnail = '';
+        foreach ($thumbnails as $thumbnail) {
+            $product->thumbnail .= $thumbnail . ',';
+        }
         $product->save();
         return redirect($this->view_prefix .'/list');
     }

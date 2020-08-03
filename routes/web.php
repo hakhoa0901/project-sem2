@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'HomeController@home');
+
 Route::get('/detail', 'HomeController@detail');
+Route::get('/', 'HomeController@home');
 
 Route::prefix('/admin')->group(function () {
     Route::resource('/categories', 'CategoryController');

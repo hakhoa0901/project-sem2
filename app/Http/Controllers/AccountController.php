@@ -78,6 +78,7 @@ class AccountController extends Controller
      */
     public function create()
     {
+        return view($this->view_prefix . '/form')->with('myErrors01', []);
     }
 
     /**
