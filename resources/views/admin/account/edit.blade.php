@@ -1,7 +1,7 @@
 @extends('admin.admin_layout')
 
 @section('content')
-    <h1>Category form</h1>
+    <h1>Account form</h1>
     <form action="/admin/users/{{$obj->id}}" method="post">
         @method('PUT')
         @csrf

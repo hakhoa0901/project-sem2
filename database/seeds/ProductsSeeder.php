@@ -12,7 +12,10 @@ class ProductsSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        if (env('DB_CONNECTION') == 'mysql') {
+            \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        }
+//        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         DB::table('products')->truncate();
         DB::table('products')->insert([[
                 'id' => '1',
@@ -24,13 +27,9 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-                'colour'=>'red',
-                'frameShape'=>'Pilot',
-                'frameSize'=>'small',
-                'frameType'=>'full rim',
                 'images'=>'https://eyewearstore.vn/uploads/plugin/products/1022/dolce-amp-gabbana-dg2133k-02-39-dg2133k-02-39-1-0.jpg',
                 'status'=>'active',
-                'creadted_by'=>1,
+                'created_by'=>1,
                 'category_id'=>1,
                 'brand_id'=>1
             ],
@@ -44,13 +43,9 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-                    'colour'=>'yellow',
-                    'frameShape'=>'Pilot',
-                    'frameSize'=>'small',
-                    'frameType'=>'full rim',
                     'images'=>'https://eyewearstore.vn/uploads/plugin/products/1023/dolce-amp-gabbana-gold-collection-dg2133k-488-58-dg2133k-488-58-1.jpg',
                     'status'=>'active',
-                    'creadted_by'=>1,
+                    'created_by'=>1,
                     'category_id'=>1,
                     'brand_id'=>1
                 ],[
@@ -63,13 +58,9 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-                    'colour'=>'yellow',
-                    'frameShape'=>'round',
-                    'frameSize'=>'large',
-                    'frameType'=>'half rim',
                     'images'=>'https://eyewearstore.vn/uploads/plugin/products/3823/dolce-amp-gabbana-dg2133-04-73-dg2133-0473.jpg',
                     'status'=>'active',
-                    'creadted_by'=>1,
+                    'created_by'=>1,
                     'category_id'=>1,
                     'brand_id'=>1
                 ],[
@@ -82,13 +73,9 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-                    'colour'=>'orange',
-                    'frameShape'=>'square',
-                    'frameSize'=>'medium',
-                    'frameType'=>'full rim',
                     'images'=>'https://eyewearstore.vn/uploads/plugin/products/1030/dolce-amp-gabbana-dg2144-02-f9-dg2144-02-f9-1.jpg',
                     'status'=>'active',
-                    'creadted_by'=>1,
+                    'created_by'=>1,
                     'category_id'=>1,
                     'brand_id'=>1
                 ],[
@@ -101,13 +88,10 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-                    'colour'=>'violet',
-                    'frameShape'=>'rectangle',
-                    'frameSize'=>'large',
-                    'frameType'=>'rim less',
+
                     'images'=>'https://eyewearstore.vn/uploads/plugin/products/1032/dolce-amp-gabbana-dg2144-12968g-dg2144-12968g-0.jpg',
                     'status'=>'active',
-                    'creadted_by'=>1,
+                    'created_by'=>1,
                     'category_id'=>1,
                     'brand_id'=>1
                 ],[
@@ -120,13 +104,10 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-                    'colour'=>'blue',
-                    'frameShape'=>'round',
-                    'frameSize'=>'medium',
-                    'frameType'=>'rim less',
+
                     'images'=>'https://eyewearstore.vn/uploads/plugin/products/2161/dolce-amp-gabbana-dg2144-13076g-dg2144-13076g-0.jpg',
                     'status'=>'active',
-                    'creadted_by'=>1,
+                    'created_by'=>1,
                     'category_id'=>1,
                     'brand_id'=>1
                 ],[
@@ -139,18 +120,19 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-                    'colour'=>'yellow',
-                    'frameShape'=>'rectangle',
-                    'frameSize'=>'large',
-                    'frameType'=>'half rim',
+
                     'images'=>'https://eyewearstore.vn/uploads/plugin/products/2557/dolce-amp-gabbana-dg2144-02-n0-dg2144-02n0-0.jpg',
                     'status'=>'active',
-                    'creadted_by'=>1,
+                    'created_by'=>1,
                     'category_id'=>1,
                     'brand_id'=>1
                 ]
             ]
         );
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+
+//        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        if (env('DB_CONNECTION') == 'mysql') {
+            \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        }
     }
 }

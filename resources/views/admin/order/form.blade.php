@@ -6,21 +6,19 @@
             <div class="col">
                 <h4 class="mb-3">
                     <i class="fas fa-stream"></i> Form order
-{{--                    <small class="text-muted">Enter information</small>--}}
                 </h4>
-{{--                <a href="/categories"><i class=""></i>&nbsp;&nbsp;List category</a>--}}
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <form action="" method="post">
+                <form action="/admin/orders" method="post">
                     @csrf
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="creadted_by">Creadted By</label>
-                            <input type="text" class="form-control" id="" name="creadted_by">
-                            @if ($errors->has('creadted_by'))
-                                <span class="text-danger">* {{$errors->first('creadted_by')}}</span>
+                            <label for="created_by">Created By</label>
+                            <input type="text" class="form-control" id="" name="created_by">
+                            @if ($errors->has('created_by'))
+                                <span class="text-danger">* {{$errors->first('created_by')}}</span>
                             @endif
                             <label for="totalPrice">TotalPrice</label>
                             <input type="text" class="form-control" id="" name="totalPrice">
