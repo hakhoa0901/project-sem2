@@ -25,7 +25,6 @@ Route::prefix('/admin')->group(function () {
 });
 
 //Route::middleware(['middleware.checkAcc'])->group(function () {
-//
 //});
 
 Route::get('/login', 'AccountController@login');

@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Product form</h1>
-    <form action="/admin/products/{{$obj->id}}" method="post">
+    <form action="/admin/products/{{$product->id}}" method="post">
         @csrf
         <input type="hidden" name="id" value="{{$product->id}}">
         <div>

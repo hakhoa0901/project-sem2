@@ -8,7 +8,7 @@
         </div>
         <div>
             Category
-            <select name="categoryId" id="">
+            <select name="category_id" id="">
                 @foreach($listCategory as $cate)
                     <option value="{{$cate->id}}">{{$cate->name}}</option>
                 @endforeach
@@ -17,7 +17,6 @@
         <div>
             Price <input type="text" name="price">
         </div>
-
         <div class="form-group">
             <div>
                 <button type="button" id="upload_widget" class="btn btn-secondary">Click to upload</button>
@@ -30,6 +29,22 @@
         <div>
             Description <input type="text" name="description">
         </div>
+            <div>
+                Brand
+                <select name="brand_id" id="">
+                    @foreach($listBrand as $cate)
+                        <option value="{{$cate->id}}">{{$cate->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div>
+                Created By
+                <select name="created_by" id="">
+                    @foreach($listAccount as $cate)
+                        <option value="{{$cate->id}}">{{$cate->name}}</option>
+                    @endforeach
+                </select>
+            </div>
         <br>
             <div>
             <input type="submit" value="Save">

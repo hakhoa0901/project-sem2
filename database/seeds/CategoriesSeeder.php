@@ -13,10 +13,10 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        if (env('DB_CONNECTION') == 'mysql') {
-            \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        }
-//        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+//        if (env('DB_CONNECTION') == 'mysql') {
+//            \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+//        }
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         DB::table('categories')->truncate();
         DB::table('categories')->insert([
                 [
@@ -44,9 +44,9 @@ class CategoriesSeeder extends Seeder
                 ]
             ]
         );
-//        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
-        if (env('DB_CONNECTION') == 'mysql') {
-            \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 1');
-        }
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+//        if (env('DB_CONNECTION') == 'mysql') {
+//            \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+//        }
     }
 }

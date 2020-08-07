@@ -94,6 +94,6 @@ class Product extends Model
         return $this->belongsTo('App\Brand', 'brand_id', 'id');
     }
     public function account(){
-        return $this->belongsTo('App\Account', 'account_id', 'id');
+        return $this->belongsTo('App\Account', 'created_by', 'id');
     }
 }

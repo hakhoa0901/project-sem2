@@ -25,13 +25,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="{{asset('assets/js/jquery2.0.3.min.js')}}"></script>
     <script src="{{asset('assets/js/raphael-min.js')}}"></script>
     <script src="{{asset('assets/js/morris.js')}}"></script>
-    <script src="{{asset('dist/js/app-style-switcher.js')}}"></script>
-    <script src="{{asset('dist/js/feather.min.js')}}"></script>
-    <script src="{{asset('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
-    <script src="{{asset('dist/js/sidebarmenu.js')}}"></script>
-    <!--Custom JavaScript -->
-    <script src="{{asset('dist/js/custom.min.js')}}"></script>
-    <script src="{{asset('dist/js/pages/dashboards/dashboard1.min.js')}}"></script>
     <style>
         .ck-editor__editable {
             min-height: 300px;
@@ -144,14 +137,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </section>
 
 </section>
-<script src="{{asset('assets/js/bootstrap.js')}}"></script>
-<script src="{{asset('assets/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-<script src="{{asset('assets/js/scripts.js')}}"></script>
-<script src="{{asset('assets/js/jquery.slimscroll.js')}}"></script>
-<script src="{{asset('assets/js/jquery.nicescroll.js')}}"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="{{asset('assets/js/flot-chart/excanvas.min.js')}}"></script><![endif]-->
-<script src="{{asset('assets/js/jquery.scrollTo.js')}}"></script>
-<!-- morris JavaScript -->
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+    <script src="/assets/js/jquery.slimscroll.js"></script>
+    <script src="/assets/js/jquery.nicescroll.js"></script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/assets/js/flot-chart/excanvas.min.js"></script><![endif]-->
+    <script src="/assets/js/jquery.scrollTo.js"></script>
+    <!-- morris JavaScript -->
 <script>
     $(document).ready(function() {
         //BOX BUTTON SHOW AND CLOSE
@@ -239,8 +232,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
 </script>
 <!-- //calendar -->
-<script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.js')}}"></script>
 <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
 @yield('script')
