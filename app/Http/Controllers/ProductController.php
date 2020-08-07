@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Account;
+use App\Brand;
 use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
@@ -53,18 +55,13 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $listBrand = Brand::all();
         $listCategory = Category::all();
-        $colours= [
-           ''=>trans('select'),
-            'red'=>'red',
-            'green'=>'green',
-            'blue'=>'blue',
-            'yellow'=>'yellow',
-            'violet'=>'violet',
-            'orange'=>'orange',
-            'gray'=>'gray'
-    ];
-        return view($this->view_prefix .'/form')->with('listCategory', $listCategory);
+        $listAccount = Account::all();
+        return view($this->view_prefix .'/form')
+            ->with('listCategory', $listCategory)
+            ->with('listBrand', $listBrand)
+            ->with('listAccount', $listAccount);
     }
 
     /**
@@ -75,16 +72,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+//        $request->validated();
         $product = new Product();
-        $product->categoryId = $request->get('categoryId');
+        $product->category_id = $request->get('category_id');
         $product->name = $request->get('name');
         $product->price = $request->get('price');
+        $product->description = $request->get('description');
         $thumbnails = $request->get('thumbnails');
         foreach ($thumbnails as $thumbnail) {
             $product->thumbnail .= $thumbnail . ',';
         }
+        $product->brand_id = $request->get('brand_id');
+        $product->created_by = $request->get('created_by');
+        $product->status = 'active';
         $product->save();
-        return redirect($this->view_prefix .'/list');
+        return redirect($this->view_prefix );
     }
 
     /**
@@ -140,5 +142,13 @@ class ProductController extends Controller
         }
         $product->delete(); // cấm
         return redirect($this->view_prefix .'/list');
+    }
+
+    public function destroyAll(Request $request)
+    {
+        $ids = $request->get('ids');
+        // delete mềm -> chuyển trạng thái.
+        Product::whereIn('id', $ids)->delete();
+        return $request->get('ids');
     }
 }

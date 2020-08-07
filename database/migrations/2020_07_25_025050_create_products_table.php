@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->unsignedDouble('price');
             $table->text('description');
             $table->timestamps();
-            $table->text('images');
+            $table->text('thumbnail');
             $table->string('status');
         });
     }

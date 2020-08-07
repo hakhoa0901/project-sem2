@@ -17,7 +17,8 @@
                                             <select name="category_id" class="form-control" id="categorySelect">
                                                 <option value="0">All</option>
                                                 @foreach($categories as $cate)
-                                                    <option value="{{$cate->id}}" {{$cate->id == $category_id ? 'selected':''}}>{{$cate->name}}</option>
+                                                    <option
+                                                        value="{{$cate->id}}" {{$cate->id == $category_id ? 'selected':''}}>{{$cate->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -27,8 +28,9 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="exampleFormControlSelect1">Search by keyword</label>
-                                            <input value="{{$keyword}}" type="text" name="keyword" class="form-control" placeholder="Search by keyword">
-                                            <input type="submit" style="visibility: hidden;" />
+                                            <input value="{{$keyword}}" type="text" name="keyword" class="form-control"
+                                                   placeholder="Search by keyword">
+                                            <input type="submit" style="visibility: hidden;"/>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -47,44 +49,47 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <table class="table">
-                    <thead>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">
+                        <input type="checkbox" id="check-all">
+                    </th>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">created_by</th>
+                    <th scope="col">Images</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($list as $product)
                     <tr>
-                        <th scope="col">
-                            <input type="checkbox" id="check-all">
+                        <th scope="row">
+                            <input type="checkbox" class="check-item" value="">
                         </th>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">created_by</th>
-                        <th scope="col">Images</th>
-                        <th scope="col">Status</th>
+                        <th class="border-top-0 px-2 py-4">{{$product->id}}</th>
+                        <td>{{$product->name}}</td>
+                        <td>{{$product->price}}</td>
+                        <td>{{$product->description}}</td>
+                        <td>{{$product->created_by}}</td>
+                        </td>
+                        <td><img class="img-thumbnail" src="{{$product->photo}}"
+                                 width="150px" alt=""></td>
+                        <td>{{ $product->status}}</td>
+                        <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
+                            <a href="/admin/products/{{$product->id}}"
+                               class="text-primary mr-1">Detail</a>
+                            <a href="/admin/products/{{$product->id}}/edit"
+                               class="text-orange mr-1">Edit</a>
+                            <a href="#" class="btn-delete" id="delete-{{$product->id}}">Delete</a>
+                        </td>
                     </tr>
-                    </thead>
-                    <tbody>
-        @foreach($list as $product)
-            <tr>
-                <th scope="row">
-                    <input type="checkbox" class="check-item" value="">
-                </th>
-                <th class="border-top-0 px-2 py-4">{{$product->id}}</th>
-                <td>{{$product->name}}</td>
-                <td>{{$product->price}}</td>
-                <td>{{$product->description}}</td>
-                <td>{{$product->created_by}}</td>
-               </td> <td><img class="img-thumbnail" src="{{$product->photo}}" width="150px" alt=""></td>
-                <td>{{ $product->status}}</td>
-                <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
-                    <a class="text-primary mr-1" href="/admin/products/{{$product->id}}">Detail</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="text-orange mr-1" href="/admin/products/{{$product->id}}/edit">Edit</a>&nbsp;&nbsp&nbsp;&nbsp;
-                    <a href="#"  class="text-danger mr-1" id="delete-{{$product->id}}">Delete</a></td>
-            </tr>
-        @endforeach
-                    </tbody>
-                </table>
-            </div>
+                @endforeach
+                </tbody>
+            </table>
         </div>
     </ul>
 @endsection
@@ -108,10 +113,47 @@
         $('#categorySelect').change(function () {
             $('#product_form').submit();
         })
-        $('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
+        $('input[name="dates"]').on('apply.daterangepicker', function (ev, picker) {
             $('input[name="start"]').val(picker.startDate.format('YYYY-MM-DD'));
             $('input[name="end"]').val(picker.endDate.format('YYYY-MM-DD'));
             $('#product_form').submit();
+        });
+
+
+        // bắt sự kiện vào checkbox check all.
+        $('#checkAll').click(function () {
+            // chuyển trạng thái check của tất cả checkbox có class 'product-checkbox'
+            // theo trạng thái của checkbox checkall.
+            $('.product-checkbox').prop('checked', $(this).prop('checked'));
+        });
+        // khi click nút delete all
+        $('#delete-all').click(function () {
+            // lấy ra danh sách ids của các checkbox đã checked.
+            var deleteIds = $('input:checkbox:checked').map(function () {
+                return $(this).val();
+            }).get();
+            // trường hợp chưa sản phẩm nào được check thì return.
+            if (deleteIds.length == 0) {
+                alert('Please choose at least 1 product!');
+                return;
+            }
+            // gửi request lên server yêu cầu xoá tất cả sản phẩm được check.
+            $.ajax({
+                'url': '/products/delete-all',
+                'method': 'POST',
+                'data': {
+                    "_token": $('meta[name="csrf-token"]').attr('content'),
+                    'ids': deleteIds
+                },
+                'success': function () {
+                    // Thông báo thành công, reload lại trang.
+                    alert('Action success');
+                    location.reload();
+                },
+                'error': function () {
+                    alert('Action fails');
+                }
+            })
         });
     </script>
 @endsection
