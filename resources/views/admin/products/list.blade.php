@@ -49,49 +49,68 @@
             </div>
         </div>
         <div class="row">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">
-                        <input type="checkbox" id="check-all">
-                    </th>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">created_by</th>
-                    <th scope="col">Images</th>
-                    <th scope="col">Status</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($list as $product)
+            <div class="btn-group show-on-hover">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                Action <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>
+            @if(sizeof($list) > 0)
+                <table class="table">
+                    <thead>
                     <tr>
-                        <th scope="row">
-                            <input type="checkbox" class="check-item" value="">
+                        <th scope="col">
+                            <input type="checkbox" id="check-all">
                         </th>
-                        <th class="border-top-0 px-2 py-4">{{$product->id}}</th>
-                        <td>{{$product->name}}</td>
-                        <td>{{$product->price}}</td>
-                        <td>{{$product->description}}</td>
-                        <td>{{$product->created_by}}</td>
-                        </td>
-                        <td><img class="img-thumbnail" src="{{$product->photo}}"
-                                 width="150px" alt=""></td>
-                        <td>{{ $product->status}}</td>
-                        <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
-                            <a href="/admin/products/{{$product->id}}"
-                               class="text-primary mr-1">Detail</a>
-                            <a href="/admin/products/{{$product->id}}/edit"
-                               class="text-orange mr-1">Edit</a>
-                            <a href="#" class="btn-delete" id="delete-{{$product->id}}">Delete</a>
-                        </td>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">created_by</th>
+                        <th scope="col">Images</th>
+                        <th scope="col">Status</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($list as $product)
+                        <tr>
+                            <th scope="row">
+                                <input type="checkbox" class="check-item" value="">
+                            </th>
+                            <th class="border-top-0 px-2 py-4">{{$product->id}}</th>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->price}}</td>
+                            <td>{{$product->description}}</td>
+                            <td>{{$product->created_by}}</td>
+                            </td>
+                            <td>
+                                @foreach($product->large_photos as $p)
+                                    <img src="{{$p}}" alt="" class="rounded-circle" width="70" height="60">
+                            @endforeach
+                            <td>{{ $product->status}}</td>
+                            <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
+                                <a href="/admin/products/{{$product->id}}"
+                                   class="text-primary mr-1">Detail</a>
+                                <a href="/admin/products/{{$product->id}}/edit"
+                                   class="text-orange mr-1">Edit</a>
+                                <a href="#" class="btn-delete" id="delete-{{$product->id}}">Delete</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                    @else
+                        <div>Have no products</div>
+                    @endif
+                </table>
         </div>
     </ul>
+
 @endsection
 @section('script')
     <script>
@@ -110,6 +129,7 @@
                 }
             }
         );
+
         $('#categorySelect').change(function () {
             $('#product_form').submit();
         })

@@ -17,14 +17,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- font-awesome icons -->
     <link rel="stylesheet" href="{{asset('assets/css/font.css')}}" type="text/css"/>
     <link href="{{asset('assets/css/font-awesome.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('assets/css/morris.css')}}}" type="text/css"/>
+    <link rel="stylesheet" href="{{asset('assets/css/morris.css')}}" type="text/css"/>
     <!-- calendar -->
     <link rel="stylesheet" href="{{asset('assets/css/monthly.css')}}">
     <!-- //calendar -->
-    <!-- //font-awesome icons -->
-    <script src="{{asset('assets/js/jquery2.0.3.min.js')}}"></script>
-    <script src="{{asset('assets/js/raphael-min.js')}}"></script>
-    <script src="{{asset('assets/js/morris.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <style>
         .ck-editor__editable {
             min-height: 300px;
@@ -135,8 +133,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <section class="wrapper">
             <div class="form-w3layouts"> @yield('content')</div>
         </section>
-
+    </section>
 </section>
+
+<script src="{{asset('assets/js/jquery2.0.3.min.js')}}"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
     <script src="/assets/js/bootstrap.js"></script>
     <script src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="/assets/js/scripts.js"></script>
@@ -144,7 +146,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/assets/js/jquery.nicescroll.js"></script>
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/assets/js/flot-chart/excanvas.min.js"></script><![endif]-->
     <script src="/assets/js/jquery.scrollTo.js"></script>
-    <!-- morris JavaScript -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<!-- calendar -->
+<script type="text/javascript" src="{{asset('assets/js/monthly.js')}}"></script>
+
+<script src="{{asset('assets/js/raphael-min.js')}}"></script>
+<script src="{{asset('assets/js/morris.js')}}"></script>
+   <!-- morris JavaScript -->
+@yield('script')
 <script>
     $(document).ready(function() {
         //BOX BUTTON SHOW AND CLOSE
@@ -200,8 +210,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     });
 </script>
-<!-- calendar -->
-<script type="text/javascript" src="{{asset('assets/js/monthly.js')}}"></script>
+
 <script type="text/javascript">
     $(window).load( function() {
 
@@ -231,10 +240,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     });
 </script>
-<!-- //calendar -->
-<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
-@yield('script')
 </body>
 </html>
 

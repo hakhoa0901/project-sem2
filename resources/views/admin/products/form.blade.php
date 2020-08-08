@@ -22,6 +22,14 @@
                 <button type="button" id="upload_widget" class="btn btn-secondary">Click to upload</button>
             </div>
             <div class="thumbnails">
+{{--                <ul class="cloudinary-thumbnails">--}}
+{{--                    @foreach($product->thumbnails as $preview)--}}
+{{--                    <li class="cloudinary-thumbnail active">--}}
+{{--                        <img src="{{$preview}}" alt="">--}}
+{{--                        <a href="javascript:voi(0)" class="cloudinary-delete">x</a>--}}
+{{--                    </li>--}}
+{{--                    @endforeach--}}
+{{--                </ul>--}}
             </div>
             @if ($errors->has('thumbnail'))
                 <span class="text-danger">* {{$errors->first('thumbnail')}}</span>
