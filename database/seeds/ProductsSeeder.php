@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class ProductsSeeder extends Seeder
@@ -27,11 +28,13 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-                'thumbnail'=>'https://eyewearstore.vn/uploads/plugin/products/1022/dolce-amp-gabbana-dg2133k-02-39-dg2133k-02-39-1-0.jpg',
+                'thumbnail'=>'dolce-amp-gabbana-dg2133k-02-39-dg2133k-02-39-1-0_yqi2fb',
                 'status'=>'active',
                 'created_by'=>1,
                 'category_id'=>1,
-                'brand_id'=>1
+                'brand_id'=>1,
+                'created_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s')
             ],
                 [
                     'id' => '2',
@@ -43,11 +46,13 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-                    'thumbnail'=>'https://eyewearstore.vn/uploads/plugin/products/1023/dolce-amp-gabbana-gold-collection-dg2133k-488-58-dg2133k-488-58-1.jpg',
+                    'thumbnail'=>'dolce-amp-gabbana-gold-collection-dg2133k-488-58-dg2133k-488-58-1_ln3kda',
                     'status'=>'active',
                     'created_by'=>1,
                     'category_id'=>1,
-                    'brand_id'=>1
+                    'brand_id'=>1,
+                    'created_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s')
                 ],[
                     'id' => '3',
                     'name'=>"DOLCE & GABBANA DG2133-04/73",
@@ -58,11 +63,13 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-                    'thumbnail'=>'https://eyewearstore.vn/uploads/plugin/products/3823/dolce-amp-gabbana-dg2133-04-73-dg2133-0473.jpg',
+                    'thumbnail'=>'dolce-amp-gabbana-dg2133-04-73-dg2133-0473_tes7tc',
                     'status'=>'active',
                     'created_by'=>1,
                     'category_id'=>1,
-                    'brand_id'=>1
+                    'brand_id'=>1,
+                    'created_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s')
                 ],[
                     'id' => '4',
                     'name'=>"DOLCE & GABBANA DG2144-02/F9",
@@ -73,11 +80,13 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-                    'thumbnail'=>'https://eyewearstore.vn/uploads/plugin/products/1030/dolce-amp-gabbana-dg2144-02-f9-dg2144-02-f9-1.jpg',
+                    'thumbnail'=>'dolce-amp-gabbana-dg2144-02-f9-dg2144-02-f9-1_frrb8z',
                     'status'=>'active',
                     'created_by'=>1,
                     'category_id'=>1,
-                    'brand_id'=>1
+                    'brand_id'=>1,
+                    'created_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s')
                 ],[
                     'id' => '5',
                     'name'=>"DOLCE & GABBANA DG2144-12968G",
@@ -89,11 +98,13 @@ class ProductsSeeder extends Seeder
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
 
-                    'thumbnail'=>'https://eyewearstore.vn/uploads/plugin/products/1032/dolce-amp-gabbana-dg2144-12968g-dg2144-12968g-0.jpg',
+                    'thumbnail'=>'dolce-amp-gabbana-dg2144-12968g-dg2144-12968g-0_odxjeb',
                     'status'=>'active',
                     'created_by'=>1,
                     'category_id'=>1,
-                    'brand_id'=>1
+                    'brand_id'=>1,
+                    'created_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s')
                 ],[
                     'id' => '6',
                     'name'=>"DOLCE & GABBANA DG2144-13076G",
@@ -105,11 +116,13 @@ class ProductsSeeder extends Seeder
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
 
-                    'thumbnail'=>'https://eyewearstore.vn/uploads/plugin/products/2161/dolce-amp-gabbana-dg2144-13076g-dg2144-13076g-0.jpg',
+                    'thumbnail'=>'dolce-amp-gabbana-dg2144-13076g-dg2144-13076g-0_ltvsfk',
                     'status'=>'active',
                     'created_by'=>1,
                     'category_id'=>1,
-                    'brand_id'=>1
+                    'brand_id'=>1,
+                    'created_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s')
                 ],[
                     'id' => '7',
                     'name'=>"DOLCE & GABBANA DG2144-02/N0",
@@ -121,11 +134,13 @@ class ProductsSeeder extends Seeder
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
 
-                    'thumbnail'=>'https://eyewearstore.vn/uploads/plugin/products/2557/dolce-amp-gabbana-dg2144-02-n0-dg2144-02n0-0.jpg',
+                    'thumbnail'=>'dolce-amp-gabbana-dg2144-02-n0-dg2144-02n0-0_dguptq',
                     'status'=>'active',
                     'created_by'=>1,
                     'category_id'=>1,
-                    'brand_id'=>1
+                    'brand_id'=>1,
+                    'created_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s')
                 ]
             ]
         );

@@ -43,7 +43,7 @@ Route::post('/register', 'AccountController@userProcessRegister');
 //Route::get('/about', 'HomeController@about');
 //Route::get('/cart', 'HomeController@cart');
 //Route::get('/contact', 'HomeController@contact');
-//Route::get('/men', 'HomeController@men');
+Route::get('/men', 'HomeController@men');
 //Route::get('/other', 'HomeController@other');
 //Route::get('/women', 'HomeController@women');
 //
