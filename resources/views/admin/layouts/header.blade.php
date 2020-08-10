@@ -25,9 +25,7 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
-                        <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                        <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                        <li><a href="/login"><i class="fa fa-key"></i> Log Out</a></li>
                     </ul>
                 </li>
                 <!-- user login dropdown end -->
@@ -44,7 +42,7 @@
             <div class="leftside-navigation">
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                        <a class="active" href="index.html">
+                        <a class="active" href="/admin">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
@@ -56,8 +54,8 @@
                             <span>Product management</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="typography.html">Product list</a></li>
-                            <li><a href="glyphicon.html">Product create</a></li>
+                            <li><a href="/admin/product_list">Product list</a></li>
+                            <li><a href="/admin/product_create">New product</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -66,8 +64,8 @@
                             <span>Category management</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="typography.html">Category list</a></li>
-                            <li><a href="glyphicon.html">Category create</a></li>
+                            <li><a href="/admin/category_list">Category list</a></li>
+                            <li><a href="/admin/category_create">New category</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -76,8 +74,8 @@
                             <span>User management</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="typography.html">User list</a></li>
-                            <li><a href="glyphicon.html">User create</a></li>
+                            <li><a href="/admin/user_list">User list</a></li>
+                            <li><a href="/admin/user_create">New user</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -86,7 +84,7 @@
                             <span>Cart management</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="typography.html">Cart list</a></li>
+                            <li><a href="/admin/cart_list">Cart list</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -96,7 +96,7 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::find($id);
+        $product = Product::find($id);quantity;
         if ($product == null) {
             return view('error/not-found');
         }

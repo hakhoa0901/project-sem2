@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function index(){
-        return view('admin.admin');
+        return view('admin.dashboard.dashboard');
     }
 
     public function product_list(){
@@ -35,7 +35,7 @@ class AdminController extends Controller
     }
 
     public function cart_list(){
-        return view('admin.cart.cart_create');
+        return view('admin.cart.cart_list');
     }
 
 }

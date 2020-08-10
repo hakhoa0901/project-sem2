@@ -43,4 +43,12 @@ class HomeController extends Controller
     public function women(){
         return view('user.women');
     }
+
+    public function delivery(){
+        return view('user.delivery');
+    }
+
+    public function delivery1(){
+        return view('user.delivery1');
+    }
 }

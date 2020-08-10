@@ -4,8 +4,8 @@
         <div class="cssmenu">
             <ul>
 
-                <li><a href="/login">Log In</a></li> |
-                <li><a href="/register">Sign Up</a></li>
+                <li><a href="/login">Đăng nhập</a></li> |
+                <li><a href="/register">Đăng ký</a></li>
             </ul>
         </div>
         <div class="clear"></div>
@@ -19,87 +19,67 @@
             </div>
             <div class="menu">
                 <ul class="megamenu skyblue">
-                    <li class="active grid"><a href="/">Home</a></li>
-                    <li><a class="color4" href="#">women</a>
+                    <li class="active grid"><a href="/">Trang chủ</a></li>
+                    <li><a class="color4" href="#">Kính Nam</a>
                         <div class="megapanel">
                             <div class="row">
                                 <div class="col1">
                                     <div class="h_nav">
-                                        <h4>Contact Lenses</h4>
+                                        <h4>Kính dâm</h4>
                                         <ul>
-                                            <li><a href="/women">Daily-wear soft lenses</a></li>
-                                            <li><a href="womens.html">Extended-wear</a></li>
-                                            <li><a href="womens.html">Lorem ipsum </a></li>
-                                            <li><a href="womens.html">Planned replacement</a></li>
+                                            <li><a href="/men">Heart-Shaped</a></li>
+                                            <li><a href="/men">Square-Shaped</a></li>
+                                            <li><a href="/men">Round-Shaped</a></li>
+                                            <li><a href="/men">Oval-Shaped</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col1">
                                     <div class="h_nav">
-                                        <h4>Sun Glasses</h4>
+                                        <h4>Kính mắt</h4>
                                         <ul>
-                                            <li><a href="womens.html">Heart-Shaped</a></li>
-                                            <li><a href="womens.html">Square-Shaped</a></li>
-                                            <li><a href="womens.html">Round-Shaped</a></li>
-                                            <li><a href="womens.html">Oval-Shaped</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Eye Glasses</h4>
-                                        <ul>
-                                            <li><a href="womens.html">Anti Reflective</a></li>
-                                            <li><a href="womens.html">Aspheric</a></li>
-                                            <li><a href="womens.html">Bifocal</a></li>
-                                            <li><a href="womens.html">Hi-index</a></li>
-                                            <li><a href="womens.html">Progressive</a></li>
+                                            <li><a href="/men">Anti Reflective</a></li>
+                                            <li><a href="/men">Aspheric</a></li>
+                                            <li><a href="/men">Bifocal</a></li>
+                                            <li><a href="/men">Hi-index</a></li>
+                                            <li><a href="/men">Progressive</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li><a class="color5" href="#">Men</a>
+                    <li><a class="color5" href="#">Kính Nữ</a>
                         <div class="megapanel">
-                            <div class="col1">
-                                <div class="h_nav">
-                                    <h4>Contact Lenses</h4>
-                                    <ul>
-                                        <li><a href="mens.html">Daily-wear soft lenses</a></li>
-                                        <li><a href="mens.html">Extended-wear</a></li>
-                                        <li><a href="mens.html">Lorem ipsum </a></li>
-                                        <li><a href="mens.html">Planned replacement</a></li>
-                                    </ul>
+                            <div class="row">
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Kính râm</h4>
+                                        <ul>
+                                            <li><a href="/men">Rayban</a></li>
+                                            <li><a href="/men">Oakley</a></li>
+                                            <li><a href="/men">Xiaomi</a></li>
+                                            <li><a href="/men">Parim</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col1">
-                                <div class="h_nav">
-                                    <h4>Sun Glasses</h4>
-                                    <ul>
-                                        <li><a href="mens.html">Heart-Shaped</a></li>
-                                        <li><a href="mens.html">Square-Shaped</a></li>
-                                        <li><a href="mens.html">Round-Shaped</a></li>
-                                        <li><a href="mens.html">Oval-Shaped</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col1">
-                                <div class="h_nav">
-                                    <h4>Eye Glasses</h4>
-                                    <ul>
-                                        <li><a href="mens.html">Anti Reflective</a></li>
-                                        <li><a href="mens.html">Aspheric</a></li>
-                                        <li><a href="mens.html">Bifocal</a></li>
-                                        <li><a href="mens.html">Hi-index</a></li>
-                                        <li><a href="mens.html">Progressive</a></li>
-                                    </ul>
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Kính mắt</h4>
+                                        <ul>
+                                            <li><a href="/men">GUCCI</a></li>
+                                            <li><a href="/men">DIOR</a></li>
+                                            <li><a href="/men">PRADA</a></li>
+                                            <li><a href="/men">FENDI</a></li>
+                                            <li><a href="/men">TOM FORD</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li><a class="color6" href="other.html">Other</a></li>
-                    <li><a class="color7" href="other.html">Purchase</a></li>
+                    <li><a class="color6" href="/contact">Liên hệ</a></li>
+                    <li><a class="color6" href="/delivery">Điều khoản sử dụng</a></li>
                 </ul>
             </div>
         </div>
@@ -113,12 +93,12 @@
                 <ul class="icon1 sub-icon1 profile_img">
                     <li><a class="active-icon c2" href="#"> </a>
                         <ul class="sub-icon1 list">
-                            <li><h3>No Products</h3><a href=""></a></li>
-                            <li><p>Lorem ipsum dolor sit amet, consectetuer  <a href="">adipiscing elit, sed diam</a></p></li>
+                            <li><h3></h3><a href=""></a></li>
+                            <li><p><a></a></p></li>
                         </ul>
                     </li>
                 </ul>
-                <ul class="last"><li><a href="#">Cart(0)</a></li></ul>
+                <ul class="last"><li><a href="#">Giỏ hàng</a></li></ul>
             </div>
         </div>
         <div class="clear"></div>

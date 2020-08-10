@@ -18,14 +18,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- font-awesome icons -->
     <link rel="stylesheet" href="{{asset('assets/css/font.css')}}" type="text/css"/>
     <link href="{{asset('assets/css/font-awesome.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('assets/css/morris.css')}}}" type="text/css"/>
+    <link rel="stylesheet" href="{{asset('assets/css/morris.css')}}}" type="text/css"/  >
     <!-- calendar -->
     <link rel="stylesheet" href="{{asset('assets/css/monthly.css')}}">
     <!-- //calendar -->
-    <!-- //font-awesome icons -->
-    <script src="{{asset('assets/js/jquery2.0.3.min.js')}}"></script>
-    <script src="{{asset('assets/js/raphael-min.js')}}"></script>
-    <script src="{{asset('assets/js/morris.js')}}"></script>
 </head>
 <body>
 @include('admin.layouts.header')
