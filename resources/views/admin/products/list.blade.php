@@ -124,6 +124,7 @@
             </div>
         </div>
     </div>
+    <script src="{{asset("deleteProduct.js")}}"></script>
 @endsection
 @section('script')
     <script>
