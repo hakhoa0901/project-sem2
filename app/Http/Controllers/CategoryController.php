@@ -19,7 +19,7 @@ class CategoryController extends Controller
     {
         $list = Category::all();
         $list = Category::where('name', 'like', '%' .$request->get('keyword'). '%')->orderBy('created_at', 'DESC')->paginate(5);
-        return view($this->view_prefix . '/list')->with('list', $list);
+        return view($this->view_prefix )->with('list', $list);
     }
 
     /**
@@ -43,7 +43,7 @@ class CategoryController extends Controller
         $obj = new Category();
         $obj->name = $request->get('name');
         $obj->save();
-        return redirect('/' . $this->view_prefix);
+        return redirect($this->view_prefix);
     }
 
     /**

@@ -50,6 +50,5 @@
                 </div>
             </div>
         </div>
-
-        <script src="{{asset("hello.js")}}"></script>
+    </div>
 @endsection

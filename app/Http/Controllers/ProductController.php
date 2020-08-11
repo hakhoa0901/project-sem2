@@ -72,7 +72,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-//        $request->validated();
         $product = new Product();
         $product->category_id = $request->get('category_id');
         $product->name = $request->get('name');
@@ -86,7 +85,7 @@ class ProductController extends Controller
         $product->created_by = $request->get('created_by');
         $product->status = 'active';
         $product->save();
-        return redirect($this->view_prefix );
+        return redirect($this->view_prefix);
     }
 
     /**
@@ -125,7 +124,7 @@ class ProductController extends Controller
             $product->thumbnail .= $thumbnail . ',';
         }
         $product->save();
-        return redirect($this->view_prefix .'/list');
+        return redirect($this->view_prefix);
     }
 
     /**
@@ -141,7 +140,7 @@ class ProductController extends Controller
             return view('error/not-found');
         }
         $product->delete(); // cấm
-        return redirect($this->view_prefix .'/list');
+        return redirect($this->view_prefix);
     }
 
     public function destroyAll(Request $request)

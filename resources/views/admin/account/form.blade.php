@@ -15,11 +15,15 @@
                 <form action="/admin/users" method="post">
                     @csrf
                     <div class="col_1_of_2 span_1_of_2">
-                        <div><input type="text" id="name" name="name" value="Name" onfocus="this.value = '';"
-                                    onblur="if (this.value == '') {this.value = 'Name';}"></div>
-                        <div><input type="text" id="userName" name="userName" value="User Name"
+                        <div>
+                            <input type="text" id="name" name="name" value="Name" onfocus="this.value = '';"
+                                    onblur="if (this.value == '') {this.value = 'Name';}">
+                        </div>
+                        <div>
+                            <input type="text" id="userName" name="userName" value="User Name"
                                     onfocus="this.value = '';"
-                                    onblur="if (this.value == '') {this.value = 'UserName';}"></div>
+                                    onblur="if (this.value == '') {this.value = 'UserName';}">
+                        </div>
                         <div><input type="text" id="password" name="password" value="Password"
                                     onfocus="this.value = '';"
                                     onblur="if (this.value == '') {this.value = 'Password';}"></div>

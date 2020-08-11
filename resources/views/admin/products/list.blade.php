@@ -1,8 +1,7 @@
 @extends('admin.admin_layout')
 
 @section('content')
-    <h1>List Product</h1>
-    <ul>
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -49,68 +48,83 @@
             </div>
         </div>
         <div class="row">
-            <div class="btn-group show-on-hover">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                Action <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-4">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <button class="dropdown-toggle" id="dd1" data-toggle="dropdown">Action <span class="caret"></span></button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dd1">
+                                       <li><a class="dropdown-item" href="javascript:void(0)" id="delete-all">Delete
+                                            All</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            @if(sizeof($list) > 0)
+                                <table class="table no-wrap v-middle mb-0">
+                                    <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0 font-14 font-weight-medium text-muted">
+                                            <div class="custom-control custom-checkbox navbar-right">
+                                                <input type="checkbox" class="custom-control-input" id="checkAll"
+                                                       value="0">
+                                                <label class="custom-control-label" for="checkAll"></label>
+                                            </div>
+                                        </th>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">created_by</th>
+                                        <th scope="col">Images</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($list as $product)
+                                        <tr>
+                                            <td class="border-top-0 px-2 py-4">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input product-checkbox"
+                                                           value="{{$product->id}}" id="checkbox_{{$product->id}}">
+                                                    <label class="custom-control-label"
+                                                           for="checkbox_{{$product->id}}"></label>
+                                                </div>
+                                            </td>
+                                            <th class="border-top-0 px-2 py-4">{{$product->id}}</th>
+                                            <td>{{$product->name}}</td>
+                                            <td>{{$product->price}}</td>
+                                            <td>{{$product->description}}</td>
+                                            <td>{{$product->created_by}}</td>
+                                            </td>
+                                            <td>
+                                                @foreach($product->large_photos as $p)
+                                                    <img src="{{$p}}" alt="" class="rounded-circle" width="70"
+                                                         height="60">
+                                            @endforeach
+                                            <td>{{ $product->status}}</td>
+                                            <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
+                                                <a href="/admin/products/{{$product->id}}"
+                                                   class="text-primary mr-1">Detail</a>
+                                                <a href="/admin/products/{{$product->id}}/edit"
+                                                   class="text-orange mr-1">Edit</a>
+                                                <a href="#" class="btn-delete" id="delete-{{$product->id}}">Delete</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            @else
+                                <div>Have no products</div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-            @if(sizeof($list) > 0)
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">
-                            <input type="checkbox" id="check-all">
-                        </th>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">created_by</th>
-                        <th scope="col">Images</th>
-                        <th scope="col">Status</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($list as $product)
-                        <tr>
-                            <th scope="row">
-                                <input type="checkbox" class="check-item" value="">
-                            </th>
-                            <th class="border-top-0 px-2 py-4">{{$product->id}}</th>
-                            <td>{{$product->name}}</td>
-                            <td>{{$product->price}}</td>
-                            <td>{{$product->description}}</td>
-                            <td>{{$product->created_by}}</td>
-                            </td>
-                            <td>
-                                @foreach($product->large_photos as $p)
-                                    <img src="{{$p}}" alt="" class="rounded-circle" width="70" height="60">
-                            @endforeach
-                            <td>{{ $product->status}}</td>
-                            <td class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
-                                <a href="/admin/products/{{$product->id}}"
-                                   class="text-primary mr-1">Detail</a>
-                                <a href="/admin/products/{{$product->id}}/edit"
-                                   class="text-orange mr-1">Edit</a>
-                                <a href="#" class="btn-delete" id="delete-{{$product->id}}">Delete</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                    @else
-                        <div>Have no products</div>
-                    @endif
-                </table>
-        </div>
-    </ul>
-
+    </div>
+    <script src="{{asset("deleteProduct.js")}}"></script>
 @endsection
 @section('script')
     <script>
@@ -174,6 +188,20 @@
                     alert('Action fails');
                 }
             })
+        });
+
+
+        $(document).ready(function(){
+            $(".dropdown").hover(
+                function() {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function() {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
         });
     </script>
 @endsection
