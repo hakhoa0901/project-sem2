@@ -18,11 +18,15 @@ Route::get('/detail', 'HomeController@detail');
 Route::get('/', 'HomeController@home');
 
 Route::prefix('/admin')->group(function () {
+    Route::get('/',function (){
+        return view('admin.dashboard.dashboard');
+    });
     Route::resource('/categories', 'CategoryController');
     Route::resource('/products', 'ProductController');
     Route::resource('/users', 'AccountController');
     Route::resource('/orders', 'OrderController');
 });
+Route::post('/products/delete-all', 'ProductController@destroyAll');
 
 //Route::middleware(['middleware.checkAcc'])->group(function () {
 //});
