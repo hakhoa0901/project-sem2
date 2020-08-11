@@ -19,12 +19,8 @@ class CreateProductsTable extends Migration
             $table->unsignedDouble('price');
             $table->text('description');
             $table->timestamps();
-            $table->enum('colour',array('red','green','blue','yellow','violet','orange','gray'));
-            $table->enum('frameShape',array('Pilot','rectangle','square','round','others','cat eyes'));
-            $table->enum('frameSize',array('small','medium','large'));
-            $table->enum('frameType',array('full rim','rim less','half rim'));
-            $table->text('images');
-            $table->enum('status',array('active','inactive'));
+            $table->text('thumbnail');
+            $table->string('status');
         });
     }
 

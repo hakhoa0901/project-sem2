@@ -124,7 +124,7 @@ Monthly 2.0.5 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 				$('#' + uniqueId + ' .monthly-header-title').html(monthNames[m - 1] +' '+ y +'<a href="#" class="monthly-reset" title="Back To This Month"></a> ');
 			}
 
-			// Account for empty days at start
+			// account for empty days at start
 			if(options.weekStart == 'Sun' && firstDay != 7) {
 				for(var i = 0; i < firstDay; i++) {
 					$('#' + uniqueId + ' .monthly-day-wrap').prepend('<div class="m-d monthly-day-blank"><div class="monthly-day-number"></div></div>');
@@ -139,7 +139,7 @@ Monthly 2.0.5 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 				}
 			}
 
-			//Account for empty days at end
+			//account for empty days at end
 			var numdays = $('#' + uniqueId + ' .monthly-day').length,
 				numempty = $('#' + uniqueId + ' .monthly-day-blank').length,
 				totaldays = numdays + numempty,

@@ -17,14 +17,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- font-awesome icons -->
     <link rel="stylesheet" href="{{asset('assets/css/font.css')}}" type="text/css"/>
     <link href="{{asset('assets/css/font-awesome.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('assets/css/morris.css')}}}" type="text/css"/>
+    <link rel="stylesheet" href="{{asset('assets/css/morris.css')}}" type="text/css"/>
     <!-- calendar -->
     <link rel="stylesheet" href="{{asset('assets/css/monthly.css')}}">
     <!-- //calendar -->
-    <!-- //font-awesome icons -->
-    <script src="{{asset('assets/js/jquery2.0.3.min.js')}}"></script>
-    <script src="{{asset('assets/js/raphael-min.js')}}"></script>
-    <script src="{{asset('assets/js/morris.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <style>
+        .ck-editor__editable {
+            min-height: 300px;
+        }
+    </style>
 </head>
 <body>
 <section id="container">
@@ -32,15 +35,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
-            <a href="index.html" class="logo">
-                VISITORS
+            <a href="/" class="logo">
+                LEO SHOP
             </a>
             <div class="sidebar-toggle-box">
                 <div class="fa fa-bars"></div>
             </div>
         </div>
         <!--logo end-->
-
         <div class="top-nav clearfix">
             <!--search & user info start-->
             <ul class="nav pull-right top-menu">
@@ -50,8 +52,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="" src="{{asset('assets/images/2.png')}}">
-                        <span class="username">Admin</span>
+                        <img alt="" src="/assets/images/2.png">
+                        <span class="username">John Doe</span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
@@ -74,7 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="leftside-navigation">
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                        <a class="active" href="{{URL::to('/dashboard')}}">
+                        <a class="active" href="dashboard.">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
@@ -83,43 +85,76 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-book"></i>
-                            <span>Danh mục sản phẩm</span>
+                            <span>Product management</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="typography.html">Thêm danh mục</a></li>
-                            <li><a href="glyphicon.html">Liệt kê danh mục</a></li>
-
+                            <li><a href="/admin/products">Product list</a></li>
+                            <li><a href="/admin/products/create">Product create</a></li>
                         </ul>
                     </li>
-
-                </ul>            </div>
-            <!-- sidebar menu end-->
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-book"></i>
+                            <span>Category management</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/admin/categories">Category list</a></li>
+                            <li><a href="/admin/categories/create">Category create</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-th"></i>
+                            <span>User management</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/admin/users">User list</a></li>
+                            <li><a href="/admin/users/create">User create</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-tasks"></i>
+                            <span>Cart management</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/admin/order">Order list</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </aside>
+    <!--sidebar end-->
+
     <!--sidebar end-->
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            @yield('admin_content')
+            <div class="form-w3layouts"> @yield('content')</div>
         </section>
-        <!-- footer -->
-        <div class="footer">
-            <div class="wthree-copyright">
-                <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
-            </div>
-        </div>
-        <!-- / footer -->
     </section>
-    <!--main content end-->
 </section>
-<script src="{{asset('assets/js/bootstrap.js')}}"></script>
-<script src="{{asset('assets/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-<script src="{{asset('assets/js/scripts.js')}}"></script>
-<script src="{{asset('assets/js/jquery.slimscroll.js')}}"></script>
-<script src="{{asset('assets/js/jquery.nicescroll.js')}}"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="{{asset('assets/js/flot-chart/excanvas.min.js')}}"></script><![endif]-->
-<script src="{{asset('assets/js/jquery.scrollTo.js')}}"></script>
-<!-- morris JavaScript -->
+
+<script src="{{asset('assets/js/jquery2.0.3.min.js')}}"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+    <script src="/assets/js/jquery.slimscroll.js"></script>
+    <script src="/assets/js/jquery.nicescroll.js"></script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/assets/js/flot-chart/excanvas.min.js"></script><![endif]-->
+    <script src="/assets/js/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<!-- calendar -->
+<script type="text/javascript" src="{{asset('assets/js/monthly.js')}}"></script>
+
+<script src="{{asset('assets/js/raphael-min.js')}}"></script>
+<script src="{{asset('assets/js/morris.js')}}"></script>
+   <!-- morris JavaScript -->
+@yield('script')
 <script>
     $(document).ready(function() {
         //BOX BUTTON SHOW AND CLOSE
@@ -175,8 +210,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     });
 </script>
-<!-- calendar -->
-<script type="text/javascript" src="{{asset('assets/js/monthly.js')}}"></script>
+
 <script type="text/javascript">
     $(window).load( function() {
 
@@ -201,12 +235,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 // running on a server, should be good.
                 break;
             case 'file:':
-                alert('Just a heads-up, events will not work when run locally.');
+                alert('Just a heads-up, events waill not work when run locally.');
         }
 
     });
 </script>
-<!-- //calendar -->
 </body>
 </html>
 

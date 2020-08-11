@@ -2,23 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Category;
 use Illuminate\Http\Request;
 
-class CategoryConntroller extends Controller
+class BrandController extends Controller
 {
-    private $view_prefix = 'categories';
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @param $request
-     * @return \Illuminate\Http\Response
-     */
-    public function index($request)
+    private $view_prefix = 'admin/brands';
+    public function index(Request $request)
     {
         $list = Category::all();
-        $list = Category::where('name', 'like', '%' .$request->get('keyword'). '%')->paginate(2);
+        $list = Category::where('name', 'like', '%' .$request->get('keyword'). '%')->orderBy('created_at', 'DESC')->paginate(5);
         return view($this->view_prefix . '/list')->with('list', $list);
     }
 

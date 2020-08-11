@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class AccountsSeeder extends Seeder
 {
@@ -11,9 +12,13 @@ class AccountsSeeder extends Seeder
      */
     public function run()
     {
+//        if (env('DB_CONNECTION') == 'mysql') {
+//            \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+//        }
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         DB::table('accounts')->truncate();
-        DB::table('accounts')->insert([[
+        DB::table('accounts')->insert([
+            [
                 'id' => '1',
                 'name'=>'nvdat',
                 'userName'=>'lcnvdat',
@@ -28,6 +33,10 @@ class AccountsSeeder extends Seeder
             ]
 
         );
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+
+      DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+//        if (env('DB_CONNECTION') == 'mysql') {
+//            \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+//        }
     }
 }
