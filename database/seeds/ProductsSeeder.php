@@ -63,6 +63,7 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
+
                     'thumbnail'=>'dolce-amp-gabbana-dg2133-04-73-dg2133-0473_tes7tc',
                     'status'=>'active',
                     'created_by'=>1,
@@ -80,6 +81,7 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
+           
                     'thumbnail'=>'dolce-amp-gabbana-dg2144-02-f9-dg2144-02-f9-1_frrb8z',
                     'status'=>'active',
                     'created_by'=>1,
@@ -97,7 +99,6 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-
                     'thumbnail'=>'dolce-amp-gabbana-dg2144-12968g-dg2144-12968g-0_odxjeb',
                     'status'=>'active',
                     'created_by'=>1,
@@ -117,6 +118,7 @@ class ProductsSeeder extends Seeder
                                     Lọc UV400: Có',
 
                     'thumbnail'=>'dolce-amp-gabbana-dg2144-13076g-dg2144-13076g-0_ltvsfk',
+
                     'status'=>'active',
                     'created_by'=>1,
                     'category_id'=>1,
@@ -133,7 +135,6 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-
                     'thumbnail'=>'dolce-amp-gabbana-dg2144-02-n0-dg2144-02n0-0_dguptq',
                     'status'=>'active',
                     'created_by'=>1,
