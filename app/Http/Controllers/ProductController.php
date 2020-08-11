@@ -6,10 +6,24 @@ use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use DB;
 
 class ProductController extends Controller
 {
     private $view_prefix = 'admin/products';
+
+
+//        public function customerIndex(Request $request)
+//        {
+////            // tạo biến data là một mảng chứa dữ liệu trả về.
+////            $data = array();
+////            $product_list = Product::all();
+////            $data['list'] = $product_list;
+////            return view('user.men')
+////                ->with($data);
+//            $products = DB::table('products')-> get();
+//            return view('user.men', compact('products'));
+//        }
 
     public function index(Request $request)
     {
@@ -45,6 +59,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         return view($this->view_prefix .'/detail')->with('product', $product);
     }
+
 
     /**
      * Show the form for creating a new resource.

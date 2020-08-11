@@ -3,6 +3,7 @@
     <title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -17,21 +18,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- font-awesome icons -->
     <link rel="stylesheet" href="{{asset('assets/css/font.css')}}" type="text/css"/>
     <link href="{{asset('assets/css/font-awesome.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('assets/css/morris.css')}}}" type="text/css"/>
+    <link rel="stylesheet" href="{{asset('assets/css/morris.css')}}" type="text/css"/>
     <!-- calendar -->
     <link rel="stylesheet" href="{{asset('assets/css/monthly.css')}}">
     <!-- //calendar -->
-    <!-- //font-awesome icons -->
-    <script src="{{asset('assets/js/jquery2.0.3.min.js')}}"></script>
-    <script src="{{asset('assets/js/raphael-min.js')}}"></script>
-    <script src="{{asset('assets/js/morris.js')}}"></script>
-    <script src="{{asset('dist/js/app-style-switcher.js')}}"></script>
-    <script src="{{asset('dist/js/feather.min.js')}}"></script>
-    <script src="{{asset('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
-    <script src="{{asset('dist/js/sidebarmenu.js')}}"></script>
-    <!--Custom JavaScript -->
-    <script src="{{asset('dist/js/custom.min.js')}}"></script>
-    <script src="{{asset('dist/js/pages/dashboards/dashboard1.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <style>
         .ck-editor__editable {
             min-height: 300px;
@@ -138,20 +131,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <!--sidebar end-->
     <!--main content start-->
-    <section id="main-content">
-        <section class="wrapper">
-            <div class="form-w3layouts"> @yield('content')</div>
-        </section>
-
 </section>
-<script src="{{asset('assets/js/bootstrap.js')}}"></script>
-<script src="{{asset('assets/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-<script src="{{asset('assets/js/scripts.js')}}"></script>
-<script src="{{asset('assets/js/jquery.slimscroll.js')}}"></script>
-<script src="{{asset('assets/js/jquery.nicescroll.js')}}"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="{{asset('assets/js/flot-chart/excanvas.min.js')}}"></script><![endif]-->
-<script src="{{asset('assets/js/jquery.scrollTo.js')}}"></script>
+
+<script src="{{asset('assets/js/jquery2.0.3.min.js')}}"></script>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+<script src="/assets/js/bootstrap.js"></script>
+<script src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="/assets/js/scripts.js"></script>
+<script src="/assets/js/jquery.slimscroll.js"></script>
+<script src="/assets/js/jquery.nicescroll.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/assets/js/flot-chart/excanvas.min.js"></script><![endif]-->
+<script src="/assets/js/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<!-- calendar -->
+<script type="text/javascript" src="{{asset('assets/js/monthly.js')}}"></script>
+
+<script src="{{asset('assets/js/raphael-min.js')}}"></script>
+<script src="{{asset('assets/js/morris.js')}}"></script>
 <!-- morris JavaScript -->
+@yield('script')
 <script>
     $(document).ready(function() {
         //BOX BUTTON SHOW AND CLOSE
@@ -207,8 +207,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     });
 </script>
-<!-- calendar -->
-<script type="text/javascript" src="{{asset('assets/js/monthly.js')}}"></script>
+
 <script type="text/javascript">
     $(window).load( function() {
 
@@ -238,12 +237,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     });
 </script>
-<!-- //calendar -->
-<script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.js')}}"></script>
-<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
-@yield('script')
+@yield('content')
 </body>
 </html>
-

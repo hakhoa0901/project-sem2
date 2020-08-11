@@ -15,7 +15,6 @@ class AccountsSeeder extends Seeder
 //        if (env('DB_CONNECTION') == 'mysql') {
 //            \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 //        }
-//        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         DB::table('accounts')->truncate();
         DB::table('accounts')->insert([

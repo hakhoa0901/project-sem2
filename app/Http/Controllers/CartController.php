@@ -51,6 +51,7 @@ class CartController extends Controller
         if($cartItem['quantity'] <= 0){
             unset($Cart[$product->id]);
         }
+
         Session::put('Cart', $Cart);
         return redirect('/cart/show');
     }

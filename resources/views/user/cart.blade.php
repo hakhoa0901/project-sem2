@@ -26,7 +26,7 @@
         <th>Quantity</th>
         <th>Action</th>
     </tr>
-    @foreach($shoppingCart as $key => $cartItem)
+    @foreach($Cart as $key => $cartItem)
         <tr>
             <td>
                 {{$cartItem['productId']}}
@@ -55,7 +55,7 @@
 <strong>Total money {{$totalMoney}}</strong>
 <a href="/products-customer">Back to shop</a>
 <div style="margin: 10px">
-    <form action="/shopping-cart/submit" method="POST">
+    <form action="/cart/submit" method="POST">
         @csrf
         <div class="form-group">
             Người nhận <input type="text" name="shipName">

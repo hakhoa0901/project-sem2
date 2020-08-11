@@ -60,6 +60,7 @@
                 <div class="clearfix"> </div>
             </div>
             <!-- //market-->
+
+            </div>
         </section>
-    </section>
 @endsection

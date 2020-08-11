@@ -33,35 +33,25 @@
                                 <li><a href="#">8</a></li>
                                 <li><a href="#">9</a></li>
                             </ul>
-{{--                            <div class="limiter visible-desktop">--}}
-{{--                                <label>Show</label>--}}
-{{--                                <select>--}}
-{{--                                    <option value="" selected="selected">--}}
-{{--                                        9                </option>--}}
-{{--                                    <option value="">--}}
-{{--                                        15                </option>--}}
-{{--                                    <option value="">--}}
-{{--                                        30                </option>--}}
-{{--                                </select> per page--}}
-{{--                            </div>--}}
                             <div class="clear"></div>
                         </div>
                         <div class="clear"></div>
                     </div>
                     <div class="top-box">
+                        @foreach($products as $prd)
                         <div class="col_1_of_3 span_1_of_3">
                                 <div class="inner_content clearfix">
                                     <a href="single.html">
                                     <div class="product_image">
-                                        <img src="/user/images/pic.jpg" alt=""/>
+                                        <img src="/user/images/{{$prd->images}}" alt=""/>
                                     </div>
                                     </a>
                                     <div class="sale-box"><span class="on_sale title_shop">New</span></div>
                                     <div class="price">
                                         <div class="cart-left">
-                                            <p class="title">Lorem Ipsum simply</p>
+                                            <p class="title">{{$prd->name}}</p>
                                             <div class="price1">
-                                                <span class="actual">$12.00</span>
+                                                <span class="actual">{{$prd->price}} VND</span>
                                             </div>
                                         </div>
                                         <a href="single.html">
@@ -71,50 +61,51 @@
                                     </div>
                                 </div>
                         </div>
-                        <div class="col_1_of_3 span_1_of_3">
-                            <div class="inner_content clearfix">
-                                <a href="single.html">
-                                    <div class="product_image">
-                                        <img src="/user/images/pic.jpg" alt=""/>
-                                    </div>
-                                </a>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <a href="single.html">
-                                        <div class="cart-right"> </div>
-                                    </a>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col_1_of_3 span_1_of_3">
-                            <div class="inner_content clearfix">
-                                <a href="single.html">
-                                    <div class="product_image">
-                                        <img src="/user/images/pic.jpg" alt=""/>
-                                    </div>
-                                </a>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <a href="single.html">
-                                        <div class="cart-right"> </div>
-                                    </a>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+{{--                        <div class="col_1_of_3 span_1_of_3">--}}
+{{--                            <div class="inner_content clearfix">--}}
+{{--                                <a href="single.html">--}}
+{{--                                    <div class="product_image">--}}
+{{--                                        <img src="/user/images/pic.jpg" alt=""/>--}}
+{{--                                    </div>--}}
+{{--                                </a>--}}
+{{--                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>--}}
+{{--                                <div class="price">--}}
+{{--                                    <div class="cart-left">--}}
+{{--                                        <p class="title">Lorem Ipsum simply</p>--}}
+{{--                                        <div class="price1">--}}
+{{--                                            <span class="actual">$12.00</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <a href="single.html">--}}
+{{--                                        <div class="cart-right"> </div>--}}
+{{--                                    </a>--}}
+{{--                                    <div class="clear"></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col_1_of_3 span_1_of_3">--}}
+{{--                            <div class="inner_content clearfix">--}}
+{{--                                <a href="single.html">--}}
+{{--                                    <div class="product_image">--}}
+{{--                                        <img src="/user/images/pic.jpg" alt=""/>--}}
+{{--                                    </div>--}}
+{{--                                </a>--}}
+{{--                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>--}}
+{{--                                <div class="price">--}}
+{{--                                    <div class="cart-left">--}}
+{{--                                        <p class="title">Lorem Ipsum simply</p>--}}
+{{--                                        <div class="price1">--}}
+{{--                                            <span class="actual">$12.00</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <a href="single.html">--}}
+{{--                                        <div class="cart-right"> </div>--}}
+{{--                                    </a>--}}
+{{--                                    <div class="clear"></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="clear"></div>
                     </div>
                     <div class="top-box">
@@ -528,5 +519,8 @@
         </div>
     </div>
     <script src="/user/js/jquery.easydropdown.js"></script>
+
+
+
 
 @endsection

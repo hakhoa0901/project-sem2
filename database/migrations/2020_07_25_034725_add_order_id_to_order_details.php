@@ -11,13 +11,13 @@ class AddOrderIdToOrderDetails extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::table('order_details', function (Blueprint $table) {
-            $table->unsignedBigInteger('order_id');
-            $table->foreign('order_id')->references('id')->on('orders');
-        });
-    }
+//    public function up()
+//    {
+//        Schema::table('order_details', function (Blueprint $table) {
+//            $table->unsignedBigInteger('order_id');
+//            $table->foreign('order_id')->references('id')->on('orders');
+//        });
+//    }
 
     /**
      * Reverse the migrations.
