@@ -81,7 +81,7 @@ class ProductsSeeder extends Seeder
                                     Màu mắt: Vàng / Mirror
                                     Màu Gọng: Vàng
                                     Lọc UV400: Có',
-           
+
                     'thumbnail'=>'dolce-amp-gabbana-dg2144-02-f9-dg2144-02-f9-1_frrb8z',
                     'status'=>'active',
                     'created_by'=>1,
@@ -990,6 +990,25 @@ class ProductsSeeder extends Seeder
                                         Lọc UV400: Có',
 
                     'thumbnail'=>'https://eyewearstore.vn/uploads/plugin/products/945/miu-miu-mu52qs-53-7s00a6-mu52qs-7s00a6.jpg',
+                    'status'=>'active',
+                    'created_by'=>1,
+                    'category_id'=>1,
+                    'brand_id'=>1,
+                    'created_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s')
+                ],
+                [
+                    'id' => '55',
+                    'name'=>"MIU MIU MU52QS-53-TWJ3E2",
+                    'price'=>5040000,
+                    'description'=>'Giới tính: Nữ
+Chất liệu mắt: Plastic
+Chất liệu gọng: Metal
+Màu mắt: Xám / Gradient
+Màu Gọng: Vàng / Tím
+Lọc UV400: Có',
+
+                    'thumbnail'=>'https://eyewearstore.vn/uploads/plugin/products/947/miu-miu-mu52qs-53-twj3e2-mu52qs-twj3e2-0.jpg',
                     'status'=>'active',
                     'created_by'=>1,
                     'category_id'=>1,
