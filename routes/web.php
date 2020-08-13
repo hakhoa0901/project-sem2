@@ -17,25 +17,28 @@ use Illuminate\Support\Facades\Route;
 Route::get('/detail', 'HomeController@detail');
 Route::get('/', 'HomeController@home');
 
-Route::prefix('/admin')->group(function () {
-    Route::get('/',function (){
-        return view('admin.dashboard.dashboard');
-    });
-    Route::resource('/categories', 'CategoryController');
-    Route::resource('/products', 'ProductController');
-    Route::resource('/users', 'AccountController');
-    Route::resource('/orders', 'OrderController');
-});
-Route::post('/products/delete-all', 'ProductController@destroyAll');
-
-//Route::middleware(['middleware.checkAcc'])->group(function () {
+//Route::middleware(['middleware.checkUser'])->group(function () {
+    Route::get('/login', 'AccountController@login');
+    Route::post('/login', 'AccountController@processLogin');
+    Route::post('/register', 'AccountController@userProcessRegister');
+    Route::get('/register', 'AccountController@register');
 //});
 
-Route::get('/login', 'AccountController@login');
-Route::post('/login', 'AccountController@processLogin');
+Route::middleware(['middleware.checkType'])->group(function () {
+    Route::prefix('/admin')->group(function () {
+        Route::get('/',function (){
+            return view('admin.dashboard.dashboard');
+        });
+        Route::resource('/categories', 'CategoryController');
+        Route::resource('/products', 'ProductController');
+        Route::resource('/users', 'AccountController');
+        Route::resource('/orders', 'OrderController');
+        Route::resource('/brands', 'BrandController');
+        Route::post('/products/delete-all', 'ProductController@destroyAll');
+    });
+});
 
-Route::get('/register', 'AccountController@register');
-Route::post('/register', 'AccountController@userProcessRegister');
+
 
 //
 ////frontend

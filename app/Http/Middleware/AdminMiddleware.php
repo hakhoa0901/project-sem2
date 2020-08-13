@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class CheckAccount
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,14 +17,14 @@ class CheckAccount
     {
         $userName = $request->getSession()->get('userName');
         $type = $request->getSession()->get('type');
-        if($userName == null){
+        if($userName == null) {
             $request->getSession()->flash('msg', 'Please login to continue!');
             return redirect('/login');
         }
-        if ($type == 'admin'){
-        $request->getSession()->flash('msg','admin');
-        return redirect('/categories');
-        }elseif ($type == 'customer')
+        if ($type != 'admin') {
+            $request->getSession();
+            return redirect('/login');
+        }
         return $next($request);
     }
 }

@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
-use App\Category;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
     private $view_prefix = 'admin/brands';
+    /**
+     * Display a listing of the resource.
+     *
+     * @param $request
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $request)
     {
-        $list = Category::all();
-        $list = Category::where('name', 'like', '%' .$request->get('keyword'). '%')->orderBy('created_at', 'DESC')->paginate(5);
-        return view($this->view_prefix . '/list')->with('list', $list);
+        $list = Brand::all();
+        $list = Brand::where('name', 'like', '%' .$request->get('keyword'). '%')->orderBy('created_at', 'DESC')->paginate(5);
+        return view($this->view_prefix.'/list')->with('list', $list);
     }
 
     /**
@@ -34,7 +39,7 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        $obj = new Category();
+        $obj = new Brand();
         $obj->name = $request->get('name');
         $obj->save();
         return redirect('/' . $this->view_prefix);
@@ -48,7 +53,7 @@ class BrandController extends Controller
      */
     public function show($id)
     {
-        $obj = Category::find($id);
+        $obj = Brand::find($id);
         return view($this->view_prefix . '/detail')->with('obj', $obj);
     }
 
@@ -60,7 +65,7 @@ class BrandController extends Controller
      */
     public function edit($id)
     {
-        $obj = Category::find($id);
+        $obj = Brand::find($id);
         if ($obj == null) {
             return view('error/not-found');
         }
@@ -76,7 +81,7 @@ class BrandController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $obj = Category::find($id);
+        $obj = Brand::find($id);
         if ($obj == null) {
             return view('error/not-found');
         }
@@ -93,7 +98,7 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        $obj = Category::find($id);
+        $obj = Brand::find($id);
         if ($obj == null) {
             abort(404);
         }

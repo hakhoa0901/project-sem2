@@ -19,72 +19,72 @@ class BrandsSeeder extends Seeder
         DB::table('brands')->truncate();
         DB::table('brands')->insert([
             [
-                'id' => '1',
+                'id' => 1,
                 'name'=>" DOLCE & GABBANA"
             ],
                 [
-                    'id' => '2',
+                    'id' => 2,
                     'name'=>"GUCCI"
                 ],[
-                    'id' => '3',
+                    'id' => 3,
                     'name'=>"DIOR"
                 ],
                 [
-                    'id' => '4',
+                    'id' => 4,
                     'name'=>"PRADA"
                 ],
                 [
-                    'id' => '5',
+                    'id' => 5,
                     'name'=>"ASOS"
                 ],
                 [
-                    'id' => '6',
+                    'id' => 6,
                     'name'=>"FENDI"
                 ],
                 [
-                    'id' => '7',
+                    'id' => 7,
                     'name'=>"TOM FORD"
                 ],
                 [
-                    'id' => '8',
+                    'id' => 8,
                     'name'=>"THOM BROWNE"
                 ],
                 [
-                    'id' => '9',
+                    'id' => 9,
                     'name'=>"RAYBAN"
                 ],[
-                    'id' => '10',
+                    'id' => 10,
                     'name'=>"LINDA FARROW"
                 ],[
-                    'id' => '11',
+                    'id' => 11,
                     'name'=>"BOTTEGA VENETA"
                 ],
                 [
-                    'id' => '12',
+                    'id' => 12,
                     'name'=>"MAISON MARGIELA"
                 ],[
-                    'id' => '13',
+                    'id' => 13,
                     'name'=>"GARRETT LEIGHT"
                 ],[
-                    'id' => '14',
+                    'id' => 14,
                     'name'=>"GENTLE MONSTER"
                 ],[
-                    'id' => '15',
+                    'id' => 15,
                     'name'=>"MIU MIU"
                 ],[
-                    'id' => '16',
+                    'id' => 16,
                     'name'=>"ALICE+OLIVIA"
                 ],[
-                    'id' => '17',
+                    'id' => 17,
                     'name'=>"LE SPECS"
                 ],[
-                    'id' => '18',
+                    'id' => 18,
                     'name'=>"RIVER ISLAND"
                 ],[
-                    'id' => '19',
+                    'id' => 19,
                     'name'=>"TOPSHOP"
                 ],[
-                    'id' => '20',
+                    'id' => 20,
                     'name'=>"ALDO"
                 ]
             ]

@@ -3,17 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Account;
-use App\Category;
 use App\Http\Requests\ValidateRegister;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
 {
     private $view_prefix = 'admin/account';
+
     public function login()
     {
         return view('login');
     }
+
     public function processLogin(Request $request)
     {
         $userName = $request->get('userName');
@@ -27,13 +28,14 @@ class AccountController extends Controller
         }
         $request->getSession()->put('userName', $existingAccount->userName);
         $request->getSession()->put('type', $existingAccount->type);
-        return redirect('/categories');
+        return redirect('/admin/products');
     }
 
     public function register()
     {
         return view('register');
     }
+
     public function userProcessRegister(ValidateRegister $request)
     {
         $name = $request->get('name');
@@ -44,6 +46,7 @@ class AccountController extends Controller
         $phone = $request->get('phone');
         $address = $request->get('address');
         $email = $request->get('email');
+
         $request->validated();
         $account = new Account();
         $account->name = $name;
@@ -59,108 +62,112 @@ class AccountController extends Controller
         return redirect('/register');
     }
 
-//
-//    /**
-//     * Display a listing of the resource.
-//     *
-//     * @param $request
-//     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
-//     */
-//    public function index(Request $request)
-//    {
-//        $list_account = Account::all();
-//        $list = Account::where('name', 'like', '%' .$request->get('keyword'). '%')->orderBy('created_at', 'DESC')->paginate(5);
-//        return view($this->view_prefix . '/list')->with('list_account', $list_account);
-//    }
-//
-//    /**
-//     * Show the form for creating a new resource.
-//     *
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function create()
-//    {
-//        return view($this->view_prefix . '/form')->with('myErrors01', []);
-//    }
-//
-//    /**
-//     * Store a newly created resource in storage.
-//     *
-//     * @param  \Illuminate\Http\Request  $request
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function store(Request $request)
-//    {
-//        $obj = new Account();
-//        $obj->name = $request->get('name');
-//        $obj->usesName = $request->get('usesName');
-//        $obj->address = $request->get('address');
-//        $obj->email = $request->get('email');
-//        $obj->phone = $request->get('phone');
-//        $obj->status = $request->get('status');
-//        $obj->type = $request->get('type');
-//        $obj->save();
-//        return redirect('/' . $this->view_prefix);
-//    }
-//
-//    /**
-//     * Display the specified resource.
-//     *
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function show($id)
-//    {
-//        $obj = Account::find($id);
-//        return view($this->view_prefix . '/detail')->with('obj', $obj);
-//    }
-//
-//    /**
-//     * Show the form for editing the specified resource.
-//     *
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function edit($id)
-//    {
-//        $obj = Account::find($id);
-//        if ($obj == null) {
-//            return view('error/not-found');
-//        }
-//        return view($this->view_prefix . '/edit')->with('obj', $obj);
-//    }
-//
-//    /**
-//     * Update the specified resource in storage.
-//     *
-//     * @param  \Illuminate\Http\Request  $request
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function update(Request $request, $id)
-//    {
-//        $obj = Account::find($id);
-//        if ($obj == null) {
-//            return view('error/not-found');
-//        }
-//        $obj->name = $request->get('name');
-//        $obj->save();
-//        return redirect('/' . $this->view_prefix);
-//    }
-//
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function destroy($id)
-//    {
-//        $obj = Account::find($id);
-//        if ($obj == null) {
-//            abort(404);
-//        }
-//        $obj->delete(); // cấm
-//        abort(200);
-//    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     */
+    public function index(Request $request)
+    {
+        $list = Account::all();
+        $list = Account::where('name', 'like', '%' . $request->get('keyword') . '%')->orderBy('created_at', 'DESC')->paginate(5);
+        return view($this->view_prefix . '/list')->with('list', $list);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view($this->view_prefix . '/form')->with('myErrors01', []);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $obj = new Account();
+        $obj->name = $request->get('name');
+        $obj->userName = $request->get('userName');
+        $password = $request->get('password');
+        $salt = substr(sha1(rand()), 0, 7);
+        $obj->salt = $salt;
+        $obj->password_hash = md5($password . $salt);
+        $obj->address = $request->get('address');
+        $obj->email = $request->get('email');
+        $obj->phone = $request->get('phone');
+        $obj->status = "active";
+        $obj->type = "admin";
+        $obj->save();
+        return redirect('/admin/users');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $obj = Account::find($id);
+        return view($this->view_prefix . '/detail')->with('obj', $obj);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $obj = Account::find($id);
+        if ($obj == null) {
+            return view('error/not-found');
+        }
+        return view($this->view_prefix . '/edit')->with('obj', $obj);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $obj = Account::find($id);
+        if ($obj == null) {
+            return view('error/not-found');
+        }
+        $obj->name = $request->get('name');
+        $obj->save();
+        return redirect('/admin/users');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $obj = Account::find($id);
+        if ($obj == null) {
+            abort(404);
+        }
+        $obj->delete(); // cấm
+        abort(200);
+    }
 }
