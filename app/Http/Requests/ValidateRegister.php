@@ -27,7 +27,7 @@ class ValidateRegister extends FormRequest
             [
                 'name' => 'required',
                 'userName' => 'required|min:3|max:30',
-                'password' => 'required|min:8|max:20',
+                'password' => 'required|min:3|max:20',
                 'email' => 'required',
                 'address' => 'required',
                 'phone' => 'required'
@@ -39,10 +39,11 @@ class ValidateRegister extends FormRequest
     {
         return [
             'name.required'=> 'Vui lòng nhập tên',
+//            'username.unique'=> 'Vui lòng nhập tên',
             'userName.required'=> 'Vui lòng nhập User Name',
             'userName.required.min'=>'Độ dài ký tự min là 3',
             'userName.required.max'=>'Độ dài ký tự max là 30',
-            'password.required'=>'Vui lòng nhập giá',
+            'password.required'=>'Vui lòng nhập mật khẩu',
             'password.required.min'=>'Độ dài ký tự min là 3',
             'password.required.max'=>'Độ dài ký tự max là 30',
             'phone.required.numeric'=>'Vui lòng nhập giá bằng số',

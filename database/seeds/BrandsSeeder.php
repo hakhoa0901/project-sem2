@@ -19,10 +19,11 @@ class BrandsSeeder extends Seeder
         DB::table('brands')->truncate();
         DB::table('brands')->insert([
             [
-                'id' => '1',
+                'id' => 1,
                 'name'=>" DOLCE & GABBANA"
             ],
                 [
+
                     'id' => '2',
                     'name'=>"BURBERRY"
                 ],[

@@ -1,34 +1,31 @@
 @extends('admin.admin_layout')
 
 @section('content')
-    <div class="col-9">
-        <div class="row">
-            <div class="col">
-                <h4 class="mb-3">
-                    <i class="fas fa-stream"></i> Form Brands
-                    <small class="text-muted">Enter information</small>
-                </h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <form action="/admin/brands" method="post">
-                    @csrf
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="inputEmail4">Name</label>
-                            <input type="text" class="form-control" id="inputEmail4" name="name">
-                            @if ($errors->has('name'))
-                                <span class="text-danger">* {{$errors->first('name')}}</span>
-                            @endif
+        <div class="form-w3layouts">
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            THÊM HÃNG
+                        </header>
+                        <div class="panel-body">
+                            <div class="position-center">
+                                <form role="form" action="/admin/brands" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="Category">Tên Hãng</label>
+                                        <input type="text" class="form-control" id="" placeholder="" name="name">
+                                        @if ($errors->has('name'))
+                                            <span class="text-danger">* {{$errors->first('name')}}</span>
+                                        @endif
+                                    </div>
+                                    <button type="submit" class="btn btn-info">Save</button>
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary">Save</button>
-                        <button type="reset" class="btn btn-secondary">Reset</button>
-                    </div>
-                </form>
+                    </section>
+                </div>
             </div>
         </div>
-    </div>
 @endsection

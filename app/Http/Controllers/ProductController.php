@@ -36,7 +36,7 @@ class ProductController extends Controller
             $to = date($request->get('end') . ' 23:59:00');
             $product_list = $product_list->whereBetween('created_at', [$from, $to]);
         }
-        $data['list'] = $product_list->get();
+        $data['list'] = $product_list->paginate(10);
         $data['categories'] = $categories;
         return view('admin.products.list')
             ->with($data);

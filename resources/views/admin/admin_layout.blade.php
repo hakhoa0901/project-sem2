@@ -23,6 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="{{asset('assets/css/monthly.css')}}">
     <!-- //calendar -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <style>
@@ -54,8 +55,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="" src="/assets/images/2.png">
-                        <span class="username">John Doe</span>
+                        <img alt="" src="https://www.pngfind.com/pngs/m/528-5286002_forum-admin-icon-png-nitzer-ebb-that-total.png">
+                        <span class="username">Admin</span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
@@ -106,6 +107,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;">
+                            <i class="fa fa-book"></i>
+                            <span>Brands management</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/admin/brands">Brands list</a></li>
+                            <li><a href="/admin/brands/create">Brands create</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
                             <i class="fa fa-th"></i>
                             <span>User management</span>
                         </a>
@@ -117,10 +128,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-tasks"></i>
-                            <span>Cart management</span>
+                            <span>Order management</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="/admin/order">Order list</a></li>
+                            <li><a href="/admin/orders">Order list</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -128,26 +139,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </aside>
     <!--sidebar end-->
-
-    <!--sidebar end-->
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <div class="form-w3layouts"> @yield('content')</div>
+            @yield('content')
         </section>
+        <div class="footer">
+            <div class="wthree-copyright">
+                <p>© 2020 Visitors. All rights reserved | Design by <a href="#">Khoa Team T1908M - Fpt Aptech</a></p>
+            </div>
+        </div>
     </section>
 </section>
 
 <script src="{{asset('assets/js/jquery2.0.3.min.js')}}"></script>
-    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
-    <script src="/assets/js/bootstrap.js"></script>
-    <script src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="/assets/js/scripts.js"></script>
-    <script src="/assets/js/jquery.slimscroll.js"></script>
-    <script src="/assets/js/jquery.nicescroll.js"></script>
-    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/assets/js/flot-chart/excanvas.min.js"></script><![endif]-->
-    <script src="/assets/js/jquery.scrollTo.js"></script>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+<script src="/assets/js/bootstrap.js"></script>
+<script src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="/assets/js/scripts.js"></script>
+<script src="/assets/js/jquery.slimscroll.js"></script>
+<script src="/assets/js/jquery.nicescroll.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/assets/js/flot-chart/excanvas.min.js"></script><![endif]-->
+<script src="/assets/js/jquery.scrollTo.js"></script>
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <!-- calendar -->
@@ -155,7 +170,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script src="{{asset('assets/js/raphael-min.js')}}"></script>
 <script src="{{asset('assets/js/morris.js')}}"></script>
-   <!-- morris JavaScript -->
 @yield('script')
 <script>
     $(document).ready(function() {
@@ -244,4 +258,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 </body>
 </html>
-
