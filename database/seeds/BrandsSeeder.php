@@ -24,68 +24,44 @@ class BrandsSeeder extends Seeder
             ],
                 [
                     'id' => '2',
-                    'name'=>"GUCCI"
+                    'name'=>"BURBERRY"
                 ],[
                     'id' => '3',
-                    'name'=>"DIOR"
-                ],
-                [
-                    'id' => '4',
                     'name'=>"PRADA"
                 ],
                 [
+                    'id' => '4',
+                    'name'=>"VERSACE"
+                ],
+                [
                     'id' => '5',
-                    'name'=>"ASOS"
+                    'name'=>"PORSCHE"
                 ],
                 [
                     'id' => '6',
-                    'name'=>"FENDI"
+                    'name'=>"MIU MIU"
                 ],
                 [
                     'id' => '7',
-                    'name'=>"TOM FORD"
+                    'name'=>"BVLGARI"
                 ],
                 [
                     'id' => '8',
-                    'name'=>"THOM BROWNE"
+                    'name'=>"MICHAEL KORS"
                 ],
                 [
                     'id' => '9',
-                    'name'=>"RAYBAN"
+                    'name'=>"OAKLEY"
                 ],[
                     'id' => '10',
-                    'name'=>"LINDA FARROW"
+                    'name'=>"CARTIER"
                 ],[
                     'id' => '11',
-                    'name'=>"BOTTEGA VENETA"
+                    'name'=>"FRED"
                 ],
                 [
                     'id' => '12',
-                    'name'=>"MAISON MARGIELA"
-                ],[
-                    'id' => '13',
-                    'name'=>"GARRETT LEIGHT"
-                ],[
-                    'id' => '14',
-                    'name'=>"GENTLE MONSTER"
-                ],[
-                    'id' => '15',
-                    'name'=>"MIU MIU"
-                ],[
-                    'id' => '16',
-                    'name'=>"ALICE+OLIVIA"
-                ],[
-                    'id' => '17',
-                    'name'=>"LE SPECS"
-                ],[
-                    'id' => '18',
-                    'name'=>"RIVER ISLAND"
-                ],[
-                    'id' => '19',
-                    'name'=>"TOPSHOP"
-                ],[
-                    'id' => '20',
-                    'name'=>"ALDO"
+                    'name'=>"Chopard"
                 ]
             ]
         );
