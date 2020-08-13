@@ -38,6 +38,11 @@ class CategoriesSeeder extends Seeder
                 ],
                 [
                     'id' => 4,
+                    'name' => 'Unisex',
+                    'created_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s')
+                ], [
+                    'id' => 5,
                     'name' => 'Glasses Shop',
                     'created_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s'),
                     'updated_at' => Carbon::now()->addDays(0)->format('Y-m-d H:i:s')
